@@ -1,2 +1,2 @@
-# -Zona-de-Contagio
+# Zona_de_Contagio
 Projeto da disciplina de desenvolvimento de jogos
