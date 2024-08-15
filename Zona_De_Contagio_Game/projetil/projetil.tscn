@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk6px6pb57v73"]
+
+[ext_resource type="Script" path="res://projetil/projetil.gd" id="1_h8vun"]
+[ext_resource type="Texture2D" uid="uid://chmewb1giuw80" path="res://projetil/projetil.png" id="1_ltk0v"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwf15"]
+radius = 1.0
+height = 6.0
+
+[node name="Projetil" type="Area2D"]
+script = ExtResource("1_h8vun")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.1875, 0.25)
+texture = ExtResource("1_ltk0v")
+
+[node name="Projetil" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_dwf15")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
