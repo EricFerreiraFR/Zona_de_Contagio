@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drl6ucg5gster"
-path="res://.godot/imported/block_slope.png-e711986df2e177dfc1f15867eaefc463.ctex"
+uid="uid://doqaxpb8fod8b"
+path="res://.godot/imported/porta tapete-Sheet.png-1e411750991b76eee84cb353e658def0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/block_slope.png"
-dest_files=["res://.godot/imported/block_slope.png-e711986df2e177dfc1f15867eaefc463.ctex"]
+source_file="res://assets/scenarios/porta tapete-Sheet.png"
+dest_files=["res://.godot/imported/porta tapete-Sheet.png-1e411750991b76eee84cb353e658def0.ctex"]
 
 [params]
 

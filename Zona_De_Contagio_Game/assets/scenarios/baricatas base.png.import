@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bihhu7yavq1xx"
-path="res://.godot/imported/tiles1.png-d4b691ec05a7526e2d14649a01834fc1.ctex"
+uid="uid://va886r5nejgm"
+path="res://.godot/imported/baricatas base.png-0b2f9f33ee7a8fc980b85941e1cecf9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/tiles1.png"
-dest_files=["res://.godot/imported/tiles1.png-d4b691ec05a7526e2d14649a01834fc1.ctex"]
+source_file="res://assets/scenarios/baricatas base.png"
+dest_files=["res://.godot/imported/baricatas base.png-0b2f9f33ee7a8fc980b85941e1cecf9c.ctex"]
 
 [params]
 

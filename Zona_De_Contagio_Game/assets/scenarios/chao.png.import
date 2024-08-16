@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba24kx21dv7nc"
-path="res://.godot/imported/background_stars.png-7472d746bc3d07681eee9221d6294ffa.ctex"
+uid="uid://v1ftqbquo8ea"
+path="res://.godot/imported/chao.png-c922fe8ff18d68a936354a2c4c5c57d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/background_stars.png"
-dest_files=["res://.godot/imported/background_stars.png-7472d746bc3d07681eee9221d6294ffa.ctex"]
+source_file="res://assets/scenarios/chao.png"
+dest_files=["res://.godot/imported/chao.png-c922fe8ff18d68a936354a2c4c5c57d1.ctex"]
 
 [params]
 

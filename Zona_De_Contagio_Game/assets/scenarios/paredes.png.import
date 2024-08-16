@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6sja1iuph1x"
-path="res://.godot/imported/block.png-269a145248a4d530b93768d5d0dd763d.ctex"
+uid="uid://mn7gx4g3mjpn"
+path="res://.godot/imported/paredes.png-b6a215f2f81d073443c31dca72fc5f65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/block.png"
-dest_files=["res://.godot/imported/block.png-269a145248a4d530b93768d5d0dd763d.ctex"]
+source_file="res://assets/scenarios/paredes.png"
+dest_files=["res://.godot/imported/paredes.png-b6a215f2f81d073443c31dca72fc5f65.ctex"]
 
 [params]
 
