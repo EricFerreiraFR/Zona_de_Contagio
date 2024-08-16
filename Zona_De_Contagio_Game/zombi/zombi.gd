@@ -23,3 +23,8 @@ func _process(delta: float) -> void:
 		# Move o zombi na direção do jogador
 		velocity = direction * _speed
 		move_and_slide()
+
+func _on_mao_body_entered(body):
+	if body.is_in_group("Barricada"):
+		body._on_zombie_hit(10)
+		await get_tree().create_timer(1).timeout

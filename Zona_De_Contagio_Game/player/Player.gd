@@ -16,6 +16,7 @@ var _direction: Vector2 = Vector2.ZERO
 var _screen_size: Vector2
 
 func _ready() -> void:
+	add_to_group("Player")
 	_screen_size = get_viewport_rect().size
 
 func _process(_delta: float) -> void:
