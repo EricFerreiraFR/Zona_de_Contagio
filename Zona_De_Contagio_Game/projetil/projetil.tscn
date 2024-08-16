@@ -16,6 +16,8 @@ scale = Vector2(0.1875, 0.25)
 texture = ExtResource("1_ltk0v")
 
 [node name="Projetil" type="CollisionShape2D" parent="."]
+light_mask = 16
+visibility_layer = 13
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_dwf15")
 

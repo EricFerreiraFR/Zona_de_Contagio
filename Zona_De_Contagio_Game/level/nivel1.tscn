@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://crrwfw7ooecd4" path="res://mundo/tileset.png" id="1_lj0fo"]
 [ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_n3gh3"]
 [ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="3_41xg8"]
-[ext_resource type="PackedScene" path="res://mundo/baricada.tscn" id="4_o2n7l"]
+[ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="4_o2n7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwvvj"]
 texture = ExtResource("1_lj0fo")
@@ -75,6 +75,7 @@ sources/1 = SubResource("TileSetAtlasSource_qwvvj")
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+visibility_layer = 30
 texture_filter = 2
 tile_set = SubResource("TileSet_bog7h")
 format = 2
@@ -87,8 +88,5 @@ position = Vector2(161, 62)
 position = Vector2(163, 189)
 player_path = NodePath("../Player")
 
-[node name="StaticBody2D" parent="." instance=ExtResource("4_o2n7l")]
-position = Vector2(195, 111)
-
-[node name="StaticBody2D2" parent="." instance=ExtResource("4_o2n7l")]
-position = Vector2(303, 111)
+[node name="barricada" parent="." instance=ExtResource("4_o2n7l")]
+position = Vector2(198, 112)

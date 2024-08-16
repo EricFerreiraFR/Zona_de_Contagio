@@ -7,7 +7,7 @@
 radius = 12.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58uav"]
-radius = 2.0
+radius = 4.0
 height = 16.0
 
 [node name="Zombi" type="CharacterBody2D"]
@@ -20,13 +20,21 @@ scale = Vector2(1.29264, 1.33367)
 texture = ExtResource("2_b1n7v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 23
 shape = SubResource("CircleShape2D_7jwos")
 
 [node name="Mao" type="Area2D" parent="."]
 
 [node name="AreaDeDano" type="CollisionShape2D" parent="Mao"]
-position = Vector2(14, 0)
+light_mask = 4
+visibility_layer = 10
+position = Vector2(16, 0)
 shape = SubResource("CapsuleShape2D_58uav")
 debug_color = Color(0.992676, 0, 0.24867, 0.42)
 
+[node name="Timer" type="Timer" parent="Mao"]
+
 [connection signal="body_entered" from="Mao" to="." method="_on_mao_body_entered"]
+[connection signal="body_exited" from="Mao" to="." method="_on_mao_body_exited"]
+[connection signal="timeout" from="Mao/Timer" to="." method="_on_timer_timeout"]

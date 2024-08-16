@@ -23,6 +23,14 @@ MouseClick={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Parede"
+2d_render/layer_2="Player"
+2d_render/layer_3="Zombie"
+2d_render/layer_4="Objetos"
+2d_render/layer_5="Projetil"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
