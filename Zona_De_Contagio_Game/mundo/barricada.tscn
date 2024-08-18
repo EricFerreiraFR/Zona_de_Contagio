@@ -1,15 +1,84 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0mnfdm3tjokl"]
+[gd_scene load_steps=10 format=3 uid="uid://b0mnfdm3tjokl"]
 
 [ext_resource type="Script" path="res://mundo/barricada.gd" id="1_rv3dc"]
+[ext_resource type="Texture2D" uid="uid://dtylaig2a73ut" path="res://assets/scenarios/barricata janela-Sheet.png" id="2_fwsde"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g428j"]
-size = Vector2(106, 17)
+size = Vector2(32.25, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uljqm"]
+atlas = ExtResource("2_fwsde")
+region = Rect2(160, 0, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkt2v"]
+atlas = ExtResource("2_fwsde")
+region = Rect2(0, 0, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rndja"]
+atlas = ExtResource("2_fwsde")
+region = Rect2(96, 0, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dsvp"]
+atlas = ExtResource("2_fwsde")
+region = Rect2(64, 0, 32, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muxgw"]
+atlas = ExtResource("2_fwsde")
+region = Rect2(32, 0, 32, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5aqdt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uljqm")
+}],
+"loop": true,
+"name": &"barricada0",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkt2v")
+}],
+"loop": true,
+"name": &"barricada100",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rndja")
+}],
+"loop": true,
+"name": &"barricada25",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dsvp")
+}],
+"loop": true,
+"name": &"barricada50",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muxgw")
+}],
+"loop": true,
+"name": &"barricada75",
+"speed": 1.0
+}]
 
 [node name="barricada" type="StaticBody2D"]
-collision_layer = 34
+collision_layer = 32
 collision_mask = 6
 script = ExtResource("1_rv3dc")
 
 [node name="cs2d" type="CollisionShape2D" parent="."]
-position = Vector2(53, 9)
+position = Vector2(16, 6)
 shape = SubResource("RectangleShape2D_g428j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(20, 6)
+sprite_frames = SubResource("SpriteFrames_5aqdt")
+animation = &"barricada100"
