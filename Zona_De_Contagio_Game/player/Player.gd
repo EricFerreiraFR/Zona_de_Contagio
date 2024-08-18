@@ -62,3 +62,4 @@ func _clamp_screen() -> void:
 func _wrap_screen() -> void:
 	position.x = wrap(position.x, 0, _screen_size.x)
 	position.y = wrap(position.y, 0, _screen_size.y)
+	
