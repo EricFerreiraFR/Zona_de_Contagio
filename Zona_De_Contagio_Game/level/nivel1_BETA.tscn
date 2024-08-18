@@ -347,7 +347,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpcuk")
 }],
-"loop": true,
+"loop": false,
 "name": &"Close",
 "speed": 5.0
 }, {
@@ -367,7 +367,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_owcoc")
 }],
-"loop": true,
+"loop": false,
 "name": &"Open",
 "speed": 5.0
 }]
