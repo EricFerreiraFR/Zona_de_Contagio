@@ -8,6 +8,8 @@
 radius = 12.0416
 
 [node name="PlayerShip" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 47
 script = ExtResource("1_px313")
 projetil = ExtResource("2_4o8er")
 
@@ -18,11 +20,12 @@ scale = Vector2(0.46875, 0.46875)
 texture = ExtResource("2_ev5ma")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 2
-visibility_layer = 13
+light_mask = 0
+visibility_layer = 0
 shape = SubResource("CircleShape2D_hht7g")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(15, 6)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.9, 1.9)

@@ -35,6 +35,12 @@ toggle_door={
 2d_render/layer_3="Zombie"
 2d_render/layer_4="Objetos"
 2d_render/layer_5="Projetil"
+2d_physics/layer_1="Parede"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Inimigo"
+2d_physics/layer_4="Objeto"
+2d_physics/layer_5="Projetil"
+2d_physics/layer_6="Barricada"
 
 [rendering]
 
