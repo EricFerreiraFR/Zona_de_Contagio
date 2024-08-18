@@ -1,19 +1,19 @@
-[gd_scene load_steps=34 format=3 uid="uid://dwb8cl1qe74wd"]
+[gd_scene load_steps=34 format=3 uid="uid://76kwx3ioso60"]
 
-[ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_n3gh3"]
-[ext_resource type="PackedScene" uid="uid://bcipuh0dy3pc8" path="res://zombi/zombi.tscn" id="2_45qqo"]
-[ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="3_41xg8"]
-[ext_resource type="Texture2D" uid="uid://e21q7r8j8m3f" path="res://assets/scenarios/chao.png" id="4_sqqvm"]
-[ext_resource type="Texture2D" uid="uid://ono26t6mglv1" path="res://assets/scenarios/paredes.png" id="6_ja24m"]
-[ext_resource type="Texture2D" uid="uid://73grriugjd6p" path="res://assets/scenarios/porta madeira-Sheet.png" id="7_fbf06"]
-[ext_resource type="Texture2D" uid="uid://drp1stv6kvxbm" path="res://assets/scenarios/porta piso misto-Sheet.png" id="8_hhci4"]
-[ext_resource type="Texture2D" uid="uid://dokf8wwch8r2o" path="res://assets/scenarios/porta tapete-Sheet.png" id="9_m2dd6"]
-[ext_resource type="Texture2D" uid="uid://bqdrwryfgqd18" path="res://assets/scenarios/janela.png" id="10_4bint"]
-[ext_resource type="Texture2D" uid="uid://ra60x1vrvf1j" path="res://assets/scenarios/paredes2.png" id="10_xiqx3"]
-[ext_resource type="Script" path="res://mundo/AnimatableBody2D.gd" id="11_ajsch"]
+[ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_pncfu"]
+[ext_resource type="PackedScene" uid="uid://bcipuh0dy3pc8" path="res://zombi/zombi.tscn" id="2_l7as7"]
+[ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="3_cp3ha"]
+[ext_resource type="Texture2D" uid="uid://e21q7r8j8m3f" path="res://assets/scenarios/chao.png" id="4_pxgwo"]
+[ext_resource type="Texture2D" uid="uid://73grriugjd6p" path="res://assets/scenarios/porta madeira-Sheet.png" id="5_a48jp"]
+[ext_resource type="Texture2D" uid="uid://drp1stv6kvxbm" path="res://assets/scenarios/porta piso misto-Sheet.png" id="6_lfaf4"]
+[ext_resource type="Texture2D" uid="uid://dokf8wwch8r2o" path="res://assets/scenarios/porta tapete-Sheet.png" id="7_lhop6"]
+[ext_resource type="Texture2D" uid="uid://ono26t6mglv1" path="res://assets/scenarios/paredes.png" id="8_53dga"]
+[ext_resource type="Texture2D" uid="uid://ra60x1vrvf1j" path="res://assets/scenarios/paredes2.png" id="9_lf5q5"]
+[ext_resource type="Texture2D" uid="uid://bqdrwryfgqd18" path="res://assets/scenarios/janela.png" id="10_rgjfk"]
+[ext_resource type="Script" path="res://mundo/AnimatableBody2D.gd" id="11_rl37p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o7v6i"]
-texture = ExtResource("4_sqqvm")
+texture = ExtResource("4_pxgwo")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -59,7 +59,7 @@ texture_region_size = Vector2i(32, 32)
 2:4/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnkyu"]
-texture = ExtResource("7_fbf06")
+texture = ExtResource("5_a48jp")
 1:1/size_in_atlas = Vector2i(2, 2)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -88,7 +88,7 @@ texture = ExtResource("7_fbf06")
 17:0/0/custom_data_0 = 32
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkagd"]
-texture = ExtResource("8_hhci4")
+texture = ExtResource("6_lfaf4")
 1:1/size_in_atlas = Vector2i(2, 2)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -111,7 +111,7 @@ texture = ExtResource("8_hhci4")
 17:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc1e2"]
-texture = ExtResource("9_m2dd6")
+texture = ExtResource("7_lhop6")
 1:1/size_in_atlas = Vector2i(2, 2)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -144,7 +144,7 @@ sources/4 = SubResource("TileSetAtlasSource_tkagd")
 sources/5 = SubResource("TileSetAtlasSource_fc1e2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7q5jp"]
-texture = ExtResource("6_ja24m")
+texture = ExtResource("8_53dga")
 0:9/size_in_atlas = Vector2i(2, 2)
 0:9/0 = 0
 0:9/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -227,7 +227,7 @@ texture = ExtResource("6_ja24m")
 6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.9155, -16, 14.0317, -16, 14.0317, -14.0537, 16, -13.9654, 16, 15.026, -15.0039, 14.9818)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p58jq"]
-texture = ExtResource("10_xiqx3")
+texture = ExtResource("9_lf5q5")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -260,7 +260,7 @@ texture = ExtResource("10_xiqx3")
 0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -14.0537, -13.9875, -14.0537, -13.9875, -16, 14.0096, -16, 14.0317, -14.0758, 16, -13.9875, 16, 14.9818, -16, 14.9818)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5s74x"]
-texture = ExtResource("10_4bint")
+texture = ExtResource("10_rgjfk")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -290,43 +290,43 @@ sources/1 = SubResource("TileSetAtlasSource_p58jq")
 sources/2 = SubResource("TileSetAtlasSource_5s74x")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_av5eg"]
-atlas = ExtResource("7_fbf06")
+atlas = ExtResource("5_a48jp")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_80c1y"]
-atlas = ExtResource("7_fbf06")
+atlas = ExtResource("5_a48jp")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sqegf"]
-atlas = ExtResource("7_fbf06")
+atlas = ExtResource("5_a48jp")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_438wa"]
-atlas = ExtResource("7_fbf06")
+atlas = ExtResource("5_a48jp")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wpcuk"]
-atlas = ExtResource("7_fbf06")
+atlas = ExtResource("5_a48jp")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xtajd"]
-atlas = ExtResource("7_fbf06")
+atlas = ExtResource("5_a48jp")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_isgme"]
-atlas = ExtResource("7_fbf06")
+atlas = ExtResource("5_a48jp")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6cxgv"]
-atlas = ExtResource("7_fbf06")
+atlas = ExtResource("5_a48jp")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_acitb"]
-atlas = ExtResource("7_fbf06")
+atlas = ExtResource("5_a48jp")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_owcoc"]
-atlas = ExtResource("7_fbf06")
+atlas = ExtResource("5_a48jp")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ahkhx"]
@@ -347,7 +347,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpcuk")
 }],
-"loop": true,
+"loop": false,
 "name": &"Close",
 "speed": 5.0
 }, {
@@ -367,7 +367,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_owcoc")
 }],
-"loop": true,
+"loop": false,
 "name": &"Open",
 "speed": 5.0
 }]
@@ -381,15 +381,15 @@ size = Vector2(32, 3)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_n3gh3")]
+[node name="Player" parent="." instance=ExtResource("1_pncfu")]
 z_index = 100
 position = Vector2(58, 19)
 
-[node name="Zombi" parent="." instance=ExtResource("2_45qqo")]
+[node name="Zombi" parent="." instance=ExtResource("2_l7as7")]
 position = Vector2(-667, 257)
 _player_path = NodePath("../Player")
 
-[node name="ZombiSpaw" parent="." instance=ExtResource("3_41xg8")]
+[node name="ZombiSpaw" parent="." instance=ExtResource("3_cp3ha")]
 position = Vector2(-621, 352)
 player_path = NodePath("../Player")
 
@@ -408,7 +408,7 @@ layer_0/tile_data = PackedInt32Array(-262147, 0, 3, -262146, 0, 0, -262145, 0, 0
 
 [node name="Door" type="AnimatableBody2D" parent="."]
 position = Vector2(47, -144)
-script = ExtResource("11_ajsch")
+script = ExtResource("11_rl37p")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door"]
 sprite_frames = SubResource("SpriteFrames_ahkhx")
