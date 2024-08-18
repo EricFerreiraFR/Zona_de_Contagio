@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://73grriugjd6p"
-path="res://.godot/imported/porta madeira-Sheet.png-2a65d3a95ec163ec655f65d49600c33f.ctex"
+uid="uid://ra60x1vrvf1j"
+path="res://.godot/imported/paredes2.png-2768264dd0ac9556eb616e815a8ddd6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scenarios/porta madeira-Sheet.png"
-dest_files=["res://.godot/imported/porta madeira-Sheet.png-2a65d3a95ec163ec655f65d49600c33f.ctex"]
+source_file="res://assets/scenarios/paredes2.png"
+dest_files=["res://.godot/imported/paredes2.png-2768264dd0ac9556eb616e815a8ddd6f.ctex"]
 
 [params]
 
