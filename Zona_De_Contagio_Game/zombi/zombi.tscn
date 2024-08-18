@@ -11,6 +11,8 @@ radius = 4.0
 height = 16.0
 
 [node name="Zombi" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 53
 script = ExtResource("1_lm31b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,15 +22,17 @@ scale = Vector2(1.29264, 1.33367)
 texture = ExtResource("2_b1n7v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-light_mask = 4
-visibility_layer = 23
+light_mask = 0
+visibility_layer = 0
 shape = SubResource("CircleShape2D_7jwos")
 
 [node name="Mao" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 34
 
 [node name="AreaDeDano" type="CollisionShape2D" parent="Mao"]
-light_mask = 4
-visibility_layer = 10
+light_mask = 0
+visibility_layer = 0
 position = Vector2(16, 0)
 shape = SubResource("CapsuleShape2D_58uav")
 debug_color = Color(0.992676, 0, 0.24867, 0.42)
