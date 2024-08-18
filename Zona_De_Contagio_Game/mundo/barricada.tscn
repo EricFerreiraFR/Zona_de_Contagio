@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0mnfdm3tjokl"]
+
+[ext_resource type="Script" path="res://mundo/barricada.gd" id="1_rv3dc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g428j"]
+size = Vector2(106, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xf7a0"]
+size = Vector2(102, 20)
+
+[node name="barricada" type="StaticBody2D"]
+script = ExtResource("1_rv3dc")
+
+[node name="cs2d" type="CollisionShape2D" parent="."]
+light_mask = 8
+visibility_layer = 22
+position = Vector2(53, 9)
+shape = SubResource("RectangleShape2D_g428j")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(53, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 8
+visibility_layer = 22
+shape = SubResource("RectangleShape2D_xf7a0")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

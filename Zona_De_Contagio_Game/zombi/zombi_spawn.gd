@@ -9,13 +9,6 @@ var _timer: Timer
 
 func _ready() -> void:
 	$Timer.start()
-	pass
-	#_timer = Timer.new()
-	#_timer.wait_time = spawn_interval
-	#_timer.one_shot = false
-	#_timer.connect("timeout", self, "_on_SpawnTimer_timeout")
-	#add_child(_timer)
-	#_timer.start()
 
 func _on_timer_timeout():
 	# Instancia o zombi

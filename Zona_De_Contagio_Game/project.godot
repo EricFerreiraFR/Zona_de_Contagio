@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Zona_De_Contagio"
-run/main_scene="res://mundo/nivel1.tscn"
+run/main_scene="res://level/nivel1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -28,7 +28,16 @@ toggle_door={
 ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Parede"
+2d_render/layer_2="Player"
+2d_render/layer_3="Zombie"
+2d_render/layer_4="Objetos"
+2d_render/layer_5="Projetil"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.712129, 0.712129, 0.712129, 1)
