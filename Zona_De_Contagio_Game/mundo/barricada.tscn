@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0mnfdm3tjokl"]
+[gd_scene load_steps=11 format=3 uid="uid://b0mnfdm3tjokl"]
 
 [ext_resource type="Script" path="res://mundo/barricada.gd" id="1_rv3dc"]
 [ext_resource type="Texture2D" uid="uid://dtylaig2a73ut" path="res://assets/scenarios/barricata janela-Sheet.png" id="2_fwsde"]
@@ -69,16 +69,29 @@ animations = [{
 "speed": 1.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_itx4r"]
+
 [node name="barricada" type="StaticBody2D"]
+position = Vector2(0, 1)
 collision_layer = 32
 collision_mask = 6
 script = ExtResource("1_rv3dc")
 
 [node name="cs2d" type="CollisionShape2D" parent="."]
-position = Vector2(16, 6)
 shape = SubResource("RectangleShape2D_g428j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(20, 6)
+position = Vector2(3, 0)
 sprite_frames = SubResource("SpriteFrames_5aqdt")
 animation = &"barricada100"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(4, 1)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4, -1)
+shape = SubResource("RectangleShape2D_itx4r")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
