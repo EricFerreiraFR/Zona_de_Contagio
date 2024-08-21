@@ -26,6 +26,3 @@ shape = SubResource("CircleShape2D_hht7g")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(15, 6)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.9, 1.9)

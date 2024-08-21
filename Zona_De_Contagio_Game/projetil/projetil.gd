@@ -25,7 +25,7 @@ func _time_out():
 
 func _on_body_entered(body):
 	if body.is_in_group("Zombi"):
-		body.queue_free()
+		body._on_defeated()
 		queue_free()
 	elif body.is_in_group("Barricada"):
 		return

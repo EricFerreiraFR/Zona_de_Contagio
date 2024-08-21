@@ -37,8 +37,11 @@ position = Vector2(16, 0)
 shape = SubResource("CapsuleShape2D_58uav")
 debug_color = Color(0.992676, 0, 0.24867, 0.42)
 
-[node name="Timer" type="Timer" parent="Mao"]
+[node name="HitBarricada" type="Timer" parent="Mao"]
+
+[node name="HitPlayer" type="Timer" parent="Mao"]
 
 [connection signal="body_entered" from="Mao" to="." method="_on_mao_body_entered"]
 [connection signal="body_exited" from="Mao" to="." method="_on_mao_body_exited"]
-[connection signal="timeout" from="Mao/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Mao/HitBarricada" to="." method="_on_HitBarricada_timeout"]
+[connection signal="timeout" from="Mao/HitPlayer" to="." method="_on_hitPlayer_timeout"]
