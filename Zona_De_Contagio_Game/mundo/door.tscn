@@ -1,0 +1,116 @@
+[gd_scene load_steps=16 format=3 uid="uid://b6j53sf8wopdg"]
+
+[ext_resource type="Script" path="res://mundo/AnimatableBody2D.gd" id="1_jlncp"]
+[ext_resource type="Texture2D" uid="uid://73grriugjd6p" path="res://assets/scenarios/porta madeira-Sheet.png" id="2_dfglc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av5eg"]
+atlas = ExtResource("2_dfglc")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80c1y"]
+atlas = ExtResource("2_dfglc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqegf"]
+atlas = ExtResource("2_dfglc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_438wa"]
+atlas = ExtResource("2_dfglc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpcuk"]
+atlas = ExtResource("2_dfglc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xtajd"]
+atlas = ExtResource("2_dfglc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isgme"]
+atlas = ExtResource("2_dfglc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cxgv"]
+atlas = ExtResource("2_dfglc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acitb"]
+atlas = ExtResource("2_dfglc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owcoc"]
+atlas = ExtResource("2_dfglc")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahkhx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av5eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80c1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqegf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_438wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpcuk")
+}],
+"loop": true,
+"name": &"Close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xtajd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isgme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cxgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acitb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owcoc")
+}],
+"loop": true,
+"name": &"Open",
+"speed": 5.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_dpdvj"]
+a = Vector2(16, 4)
+b = Vector2(-16, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvf50"]
+size = Vector2(32, 3)
+
+[node name="Door" type="AnimatableBody2D"]
+position = Vector2(47, -144)
+script = ExtResource("1_jlncp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ahkhx")
+animation = &"Open"
+frame_progress = 0.932208
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("SegmentShape2D_dpdvj")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pvf50")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

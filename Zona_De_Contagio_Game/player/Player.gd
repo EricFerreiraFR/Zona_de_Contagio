@@ -10,6 +10,13 @@ const TURN_SPEED: float = 5
 	"up":    "ui_up", 
 	"down":  "ui_down"}
 
+# Referências ao HUD
+@export var _score_label: NodePath
+@export var _health_label: NodePath
+# Exportar a variável de vida e inicializar os pontos
+@export var _health: int = 1000
+var _score: int = 0
+
 @export var projetil: PackedScene
 var _input: Vector2 = Vector2.ZERO
 var _direction: Vector2 = Vector2.ZERO
@@ -19,6 +26,7 @@ func _init() -> void:
 	add_to_group("Player")
 
 func _ready() -> void:
+	update_hud()
 	_screen_size = get_viewport_rect().size
 
 func _process(_delta: float) -> void:
@@ -49,12 +57,41 @@ func _move_and_rotate(delta: float) -> void:
 	
 	velocity = _input * SPEED
 	move_and_slide()
-	
-	
+
 func _shoot() -> void:
 	var bullet = projetil.instantiate()# as Area2D
 	owner.add_child(bullet)
 	bullet.transform = $Muzzle.global_transform
+
+func _on_zombie_hit(amount: int):
+	print(_health)
+	decrease_health(amount)
+
+func update_hud():
+	# Atualizar os labels no HUD
+	if _score_label:
+		#get_node(_score_label).text = "Score: %d" % _score
+		get_parent().update_score(_score)
+	if _health_label:
+		#get_node(_health_label).text = "Health: %d" % _health
+		get_parent().update_health(_health)
+
+func decrease_health(amount: int):
+	# Diminuir vida
+	_health -= amount
+	if _health <= 0:
+		queue_free()
+		get_parent().GameOver()
+	update_hud()
+
+func increase_score(amount: int):
+	# Aumentar pontuação
+	_score += amount
+	update_hud()
+
+func _on_enemy_defeated():
+	# Chamado quando um inimigo é derrotado
+	increase_score(100)
 
 
 
@@ -65,4 +102,3 @@ func _clamp_screen() -> void:
 func _wrap_screen() -> void:
 	position.x = wrap(position.x, 0, _screen_size.x)
 	position.y = wrap(position.y, 0, _screen_size.y)
-	
