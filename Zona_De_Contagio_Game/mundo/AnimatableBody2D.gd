@@ -1,39 +1,43 @@
 extends AnimatableBody2D
 
-var is_open = false  # Estado da porta (fechada inicialmente)
-var player_nearby = false  # Variável para verificar se o jogador está próximo
+var isOpen = false  # Estado da porta (fechada inicialmente)
+var playerNearby = false  # Variável para verificar se o jogador está próximo
+var player: Node
 
 func _ready():
 	# Inicializar o estado da porta
-	if is_open:
-		open_door()
+	player = get_node("/root/Node2D/Player")
+	
+	if isOpen:
+		openDoor()
 	else:
-		close_door()
+		closeDoor()
 
-func toggle_door():
-	if is_open:
+func toggleDoor():
+	if isOpen:
 		$AnimatedSprite2D.play("Close")
-		close_door()
+		closeDoor()
 	else:
 		$AnimatedSprite2D.play("Open")
-		open_door()
+		openDoor()
 
-func open_door():
-	is_open = true
+func openDoor():
+	isOpen = true
 	$CollisionShape2D.disabled = true  # Desabilita a colisão ao abrir a porta
 
-func close_door():
-	is_open = false
+func closeDoor():
+	isOpen = false
 	$CollisionShape2D.disabled = false  # Habilita a colisão ao fechar a porta
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+
 	if body.name == "Player":  # Verifica se o objeto que entrou é o jogador
-		player_nearby = true
+		playerNearby = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Player":  # Verifica se o objeto que saiu é o jogador
-		player_nearby = false
+		playerNearby = false
 
 func _process(delta):
-	if player_nearby and Input.is_action_just_pressed("toggle_door"):
-		toggle_door()
+	if playerNearby and player._score >= 400  and Input.is_action_just_pressed("toggleDoor"):
+		toggleDoor()

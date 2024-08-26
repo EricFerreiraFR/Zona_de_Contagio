@@ -61,7 +61,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpcuk")
 }],
-"loop": true,
+"loop": false,
 "name": &"Close",
 "speed": 5.0
 }, {
@@ -81,7 +81,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_owcoc")
 }],
-"loop": true,
+"loop": false,
 "name": &"Open",
 "speed": 5.0
 }]
@@ -95,21 +95,28 @@ size = Vector2(32, 3)
 
 [node name="Door" type="AnimatableBody2D"]
 position = Vector2(47, -144)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_jlncp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ahkhx")
 animation = &"Open"
-frame_progress = 0.932208
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 3
+visibility_layer = 3
 position = Vector2(0, -4)
 shape = SubResource("SegmentShape2D_dpdvj")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 3
+visibility_layer = 3
 shape = SubResource("RectangleShape2D_pvf50")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
