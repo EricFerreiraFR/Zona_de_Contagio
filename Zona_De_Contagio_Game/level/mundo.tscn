@@ -323,38 +323,21 @@ sources/2 = SubResource("TileSetAtlasSource_5s74x")
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0g0rh")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "tred
+"
+
 [node name="Player" parent="." instance=ExtResource("2_cs7s0")]
 z_index = 100
-_score_label = NodePath("../Camera2D/CanvasLayer/ScoreLabel")
-_health_label = NodePath("../Camera2D/CanvasLayer/HealthLabel")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.89, 1.89)
 script = ExtResource("3_kc248")
-player = NodePath("../Player")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
-follow_viewport_enabled = true
-
-[node name="HealthLabel" type="Label" parent="Camera2D/CanvasLayer"]
-offset_left = -300.0
-offset_top = -166.0
-offset_right = -257.0
-offset_bottom = -143.0
-text = "Vida: "
-
-[node name="ScoreLabel" type="Label" parent="Camera2D/CanvasLayer"]
-offset_left = -302.0
-offset_top = -145.0
-offset_right = -239.0
-offset_bottom = -122.0
-text = "Pontos: "
-
-[node name="GameOver" type="Label" parent="Camera2D/CanvasLayer"]
-offset_left = 29.0
-offset_top = 53.0
-offset_right = 69.0
-offset_bottom = 76.0
+player = NodePath("..")
 
 [node name="TileMap-ground" type="TileMap" parent="."]
 z_index = -1
