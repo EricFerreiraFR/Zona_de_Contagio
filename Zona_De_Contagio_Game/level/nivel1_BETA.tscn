@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://76kwx3ioso60"]
+[gd_scene load_steps=35 format=3 uid="uid://76kwx3ioso60"]
 
 [ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_pncfu"]
 [ext_resource type="PackedScene" uid="uid://bcipuh0dy3pc8" path="res://zombi/zombi.tscn" id="2_l7as7"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ra60x1vrvf1j" path="res://assets/scenarios/paredes2.png" id="9_lf5q5"]
 [ext_resource type="Texture2D" uid="uid://bqdrwryfgqd18" path="res://assets/scenarios/janela.png" id="10_rgjfk"]
 [ext_resource type="Script" path="res://mundo/AnimatableBody2D.gd" id="11_rl37p"]
+[ext_resource type="Script" path="res://player/Camera.gd" id="12_lgka1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o7v6i"]
 texture = ExtResource("4_pxgwo")
@@ -387,11 +388,9 @@ position = Vector2(58, 19)
 
 [node name="Zombi" parent="." instance=ExtResource("2_l7as7")]
 position = Vector2(-667, 257)
-_player_path = NodePath("../Player")
 
 [node name="ZombiSpaw" parent="." instance=ExtResource("3_cp3ha")]
 position = Vector2(-621, 352)
-player_path = NodePath("../Player")
 
 [node name="TileMap-ground" type="TileMap" parent="."]
 z_index = -1
@@ -423,6 +422,11 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D"]
 shape = SubResource("RectangleShape2D_pvf50")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.89, 1.89)
+script = ExtResource("12_lgka1")
+player = NodePath("../Player")
 
 [connection signal="body_entered" from="Door/Area2D" to="Door" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Door/Area2D" to="Door" method="_on_area_2d_body_exited"]
