@@ -34,6 +34,5 @@ func _atualiza_frame():
 
 func _on_body_entered(body):
 	if body.is_in_group("Zombi"):
-		#var player = get_parent().find_child("Player",false)
 		var player = get_tree().get_nodes_in_group("Player")[0]
 		body.setFollow(player)

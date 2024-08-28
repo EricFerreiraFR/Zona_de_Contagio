@@ -2,7 +2,6 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED: float = 200
-const TURN_SPEED: float = 5
 @onready var _size: Vector2 = $Sprite2D.get_rect().size
 @export var _keys: Dictionary = {
 	"left":  "ui_left",
@@ -64,7 +63,7 @@ func _shoot() -> void:
 	bullet.transform = $Muzzle.global_transform
 
 func _on_zombie_hit(amount: int):
-	print(_health)
+	#print(_health)
 	decrease_health(amount)
 
 func update_hud():
@@ -80,7 +79,6 @@ func decrease_health(amount: int):
 	# Diminuir vida
 	_health -= amount
 	if _health <= 0:
-		queue_free()
 		get_parent().GameOver()
 	update_hud()
 

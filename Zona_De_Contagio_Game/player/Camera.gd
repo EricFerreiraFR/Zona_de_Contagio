@@ -15,7 +15,7 @@ func _ready():
 		set_process(true)
 
 func _process(delta):
-	if player == null:
+	if get_node(player) == null:
 		return
 	var target = get_node(player)
 	self.position = lerp(self.position, target.position, 0.1)

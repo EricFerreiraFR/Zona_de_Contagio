@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
-@export var _speed: float = 100.0
+@export var _speed: float = 80.0
 #@export var _first_follow: NodePath
 @export var _followPath: NodePath
 var _follow: Node
 var _ultimaBarricada: Node
-
 
 func _init() -> void:
 	# Adiciona o zombi ao grupo "zombi"
@@ -19,12 +18,11 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if _follow:
 		# Calcula a direção até o jogador
-		#var direction = (_follow.global_position - global_position).normalized()
-		var direction = to_local($NavigationAgent2D.get_next_path_position() - global_position).normalized()
-		
+		#var direction = ($NavigationAgent2D.get_next_path_position() - global_position).normalized()
+		var direction = self.global_position.direction_to($NavigationAgent2D.get_next_path_position())
 		#olha para o player
 		#look_at($NavigationAgent2D.get_next_path_position())
-		look_at(_follow.position)
+		look_at((global_position + $NavigationAgent2D.get_next_path_position())/2)
 		
 		# Move o zombi na direção do jogador
 		velocity = direction * _speed
