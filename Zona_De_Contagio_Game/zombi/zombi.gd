@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 @export var _speed: float = 100.0
-@export var _first_follow: NodePath
-var _player: Node
+#@export var _first_follow: NodePath
+@export var _followPath: NodePath
+var _follow: Node
 var _ultimaBarricada: Node
+
 
 func _init() -> void:
 	# Adiciona o zombi ao grupo "zombi"
@@ -11,20 +13,30 @@ func _init() -> void:
 
 func _ready() -> void:
 	# Obtém a referência ao jogador usando o NodePath
-	_player = get_node(_first_follow)
-	#_player = get_tree().get_root().get_node("res://player/pPlayer.tscn")
+	if(_followPath):
+		_follow = get_node(_followPath)
 
-func _process(delta: float) -> void:
-	if _player:
+func _physics_process(delta: float) -> void:
+	if _follow:
 		# Calcula a direção até o jogador
-		var direction = (_player.global_position - global_position).normalized()
+		#var direction = (_follow.global_position - global_position).normalized()
+		var direction = to_local($NavigationAgent2D.get_next_path_position() - global_position).normalized()
 		
 		#olha para o player
-		look_at(_player.position)
+		#look_at($NavigationAgent2D.get_next_path_position())
+		look_at(_follow.position)
 		
 		# Move o zombi na direção do jogador
 		velocity = direction * _speed
 		move_and_slide()
+
+func _makePath() -> void:
+	if(_follow):
+		$NavigationAgent2D.set_target_position(_follow.global_position)
+
+func setFollow(newFollow: Node):
+	_follow = newFollow
+	_makePath()
 
 func _on_mao_body_entered(body):
 	if body.is_in_group("Barricada"):
@@ -40,7 +52,7 @@ func _on_HitBarricada_timeout():
 		_ultimaBarricada._on_zombie_hit(10)
 
 func _on_hitPlayer_timeout():
-	_player._on_zombie_hit(10)
+	_follow._on_zombie_hit(10)
 
 func _on_mao_body_exited(body):
 	if body.is_in_group("Barricada"):
@@ -54,3 +66,6 @@ func _on_defeated():
 	var player = get_parent().get_node("Player")
 	player._on_enemy_defeated()
 	queue_free()
+
+func _on_timer_navigation_timeout():
+	_makePath()

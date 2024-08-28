@@ -17,9 +17,9 @@ func _on_timer_timeout():
 	
 	# Define a posição do spawn aleatoriamente dentro da área de spawn
 	zombi.position = position
-	
+
 	# Configura o caminho do jogador para o zumbi
-	zombi.set("_first_follow", _first_follow)
+	zombi.setFollow(get_node(_first_follow))
 
 	# Adiciona o zumbi à cena
 	get_parent().add_child(zombi)
