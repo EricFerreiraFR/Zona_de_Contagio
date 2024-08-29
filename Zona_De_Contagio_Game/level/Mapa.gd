@@ -14,7 +14,7 @@ func GameOver():
 	$CanvasLayer/GameOver.text = "Game Over"
 
 func update_score(score: int):
-	$CanvasLayer/ScoreLabel.text = "Score: %d" % score
+	$CanvasLayer/ScoreLabel.text = "PONTOS: %d" % score
 
 func update_health(health: int):
-	$CanvasLayer/HealthLabel.text = "Health: %d" % health
+	$CanvasLayer/HealthLabel.text = "VIDA: %d" % health

@@ -1,29 +1,29 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0mnfdm3tjokl"]
+[gd_scene load_steps=11 format=3 uid="uid://cphefgoxldxd5"]
 
-[ext_resource type="Script" path="res://mundo/barricada.gd" id="1_rv3dc"]
-[ext_resource type="Texture2D" uid="uid://dtylaig2a73ut" path="res://assets/scenarios/barricata janela-Sheet.png" id="2_fwsde"]
+[ext_resource type="Script" path="res://mundo/barricada.gd" id="1_7vwbi"]
+[ext_resource type="Texture2D" uid="uid://dtylaig2a73ut" path="res://assets/scenarios/barricata janela-Sheet.png" id="2_r2fah"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g428j"]
-size = Vector2(32.25, 28)
+size = Vector2(32.25, 30.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uljqm"]
-atlas = ExtResource("2_fwsde")
+atlas = ExtResource("2_r2fah")
 region = Rect2(160, 0, 32, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rkt2v"]
-atlas = ExtResource("2_fwsde")
+atlas = ExtResource("2_r2fah")
 region = Rect2(0, 0, 32, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rndja"]
-atlas = ExtResource("2_fwsde")
+atlas = ExtResource("2_r2fah")
 region = Rect2(96, 0, 32, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1dsvp"]
-atlas = ExtResource("2_fwsde")
+atlas = ExtResource("2_r2fah")
 region = Rect2(64, 0, 32, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_muxgw"]
-atlas = ExtResource("2_fwsde")
+atlas = ExtResource("2_r2fah")
 region = Rect2(32, 0, 32, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5aqdt"]
@@ -75,10 +75,10 @@ animations = [{
 position = Vector2(0, 1)
 collision_layer = 32
 collision_mask = 6
-script = ExtResource("1_rv3dc")
+script = ExtResource("1_7vwbi")
 
 [node name="cs2d" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(0, -9.75)
 shape = SubResource("RectangleShape2D_g428j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
