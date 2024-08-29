@@ -4,13 +4,18 @@ extends Node2D
 @export var spawn_interval: float = 2.0
 @export var spawn_area_size: Vector2 = Vector2(200, 200)
 @export var _first_follow: NodePath
+@export var ChanceDeSpawn: float = 0.3
 
 var _timer: Timer
+
 
 func _ready() -> void:
 	$Timer.start()
 
 func _on_timer_timeout():
+	var vNrRand = randi() % 100
+	if((100*ChanceDeSpawn) < vNrRand):
+		return
 	
 	# Instancia o zombi
 	var zombi = zombi_scene.instantiate() as CharacterBody2D

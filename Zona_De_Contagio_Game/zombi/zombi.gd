@@ -17,12 +17,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if _follow:
+		var nextPostion: Vector2 = $NavigationAgent2D.get_next_path_position()
 		# Calcula a direção até o jogador
 		#var direction = ($NavigationAgent2D.get_next_path_position() - global_position).normalized()
-		var direction = self.global_position.direction_to($NavigationAgent2D.get_next_path_position())
+		var direction = self.global_position.direction_to(nextPostion)
 		#olha para o player
 		#look_at($NavigationAgent2D.get_next_path_position())
-		look_at((global_position + $NavigationAgent2D.get_next_path_position())/2)
+		look_at((global_position + nextPostion)/2.0)
 		
 		# Move o zombi na direção do jogador
 		velocity = direction * _speed
