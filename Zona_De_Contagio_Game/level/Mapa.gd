@@ -15,6 +15,9 @@ func GameOver():
 
 func update_score(score: int):
 	$CanvasLayer/ScoreLabel.text = "PONTOS: %d" % score
+	print($CanvasLayer/LifeBar.rect_size.x)
 
 func update_health(health: int):
-	$CanvasLayer/HealthLabel.text = "VIDA: %d" % health
+	# Atualiza o tamanho da lifebar baseado na vida do jogador
+	$CanvasLayer/LifeBar.rect_size.x = health * $CanvasLayer/LifeBar.texture.get_size().x
+	#print($CanvasLayer/LifeBar.rect_size.x)
