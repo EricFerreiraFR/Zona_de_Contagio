@@ -26,4 +26,4 @@ position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_hht7g")
 
 [node name="Muzzle" type="Marker2D" parent="."]
-position = Vector2(15, 7)
+position = Vector2(12, 7)

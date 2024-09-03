@@ -9,9 +9,6 @@ const SPEED: float = 200
 	"up":    "ui_up", 
 	"down":  "ui_down"}
 
-# Referências ao HUD
-@export var _score_label: NodePath
-@export var _health_label: NodePath
 # Exportar a variável de vida e inicializar os pontos
 @export var _health: int = 1000
 var _score: int = 0
@@ -68,12 +65,10 @@ func _on_zombie_hit(amount: int):
 
 func update_hud():
 	# Atualizar os labels no HUD
-	if _score_label:
-		#get_node(_score_label).text = "Score: %d" % _score
-		get_parent().update_score(_score)
-	if _health_label:
-		#get_node(_health_label).text = "Health: %d" % _health
-		get_parent().update_health(_health)
+	#get_node(_score_label).text = "Score: %d" % _score
+	get_parent().update_score(_score)
+	#get_node(_health_label).text = "Health: %d" % _health
+	get_parent().update_health(_health)
 
 func decrease_health(amount: int):
 	# Diminuir vida

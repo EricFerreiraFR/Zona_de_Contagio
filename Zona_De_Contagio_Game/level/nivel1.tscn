@@ -1,9 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://dwb8cl1qe74wd"]
+[gd_scene load_steps=26 format=3 uid="uid://dwb8cl1qe74wd"]
 
 [ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_ks1kn"]
 [ext_resource type="Script" path="res://level/Mapa.gd" id="1_nym55"]
 [ext_resource type="Script" path="res://player/Camera.gd" id="2_tw5cj"]
-[ext_resource type="Texture2D" uid="uid://mw4x5787dmoy" path="res://assets/player/life bar.png" id="3_5kgpy"]
+[ext_resource type="PackedScene" uid="uid://g0yfwqo3g4e6" path="res://mundo/canvas_layer.tscn" id="3_5ol6p"]
 [ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="3_fjdr7"]
 [ext_resource type="Texture2D" uid="uid://e21q7r8j8m3f" path="res://assets/scenarios/chao.png" id="4_x3475"]
 [ext_resource type="Texture2D" uid="uid://73grriugjd6p" path="res://assets/scenarios/porta madeira-Sheet.png" id="5_g5plb"]
@@ -15,14 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://b6j53sf8wopdg" path="res://mundo/door.tscn" id="11_yctor"]
 [ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="12_m4mg8"]
 [ext_resource type="PackedScene" uid="uid://bcipuh0dy3pc8" path="res://zombi/zombi.tscn" id="14_xgolk"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f074x"]
-atlas = ExtResource("3_5kgpy")
-region = Rect2(0, 0, 80, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2awsd"]
-atlas = ExtResource("3_5kgpy")
-region = Rect2(0, 19, 6, 6)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xbhm"]
 vertices = PackedVector2Array(330, 393, 1390, 921, -985, 938, 279, 393, 10, 297, 22, 297, -105, 297, -968, -586, -105, 182, 330, -119, 1364, -612, 330, 248, 328, 182, 328, 170, 329, -54, 330, -168, -56, 42, -56, -74, 280, -10, 280, 170, -56, 170, -56, 54, 280, 182, 214, 248, 202, 248, -105, 42, -105, 54, 330, 344, 328, 344, 328, 296, 330, 296, 328, 248, 280, 248, 214, 297, 202, 297, 279, 297, 10, 248, -56, 248, -56, 182, 328, -168, 328, -170, 280, -170, 280, -169, 150, -169, 150, -120, 138, -120, 138, -169, 278, -120, 278, -119, 280, -22, -56, -86, -56, -120, 42, -120, 280, -119, 328, -22, 328, -54, 329, -106, 328, -106, 328, -119, 54, -169, 22, 248, -105, 170, -105, -74, 328, -10, -105, -86, -105, -169, 42, -169, 54, -120)
@@ -339,42 +331,8 @@ script = ExtResource("1_nym55")
 
 [node name="Player" parent="." instance=ExtResource("1_ks1kn")]
 z_index = 100
-_score_label = NodePath("../CanvasLayer/ScoreLabel")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
-offset_left = 3.0
-offset_top = 26.0
-offset_right = 66.0
-offset_bottom = 49.0
-text = "Pontos: "
-
-[node name="GameOver" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 29.0
-offset_top = 53.0
-offset_right = 69.0
-offset_bottom = 93.0
-
-[node name="LifeBar_vazia" type="TextureRect" parent="CanvasLayer"]
-texture_filter = 1
-texture_repeat = 1
-offset_left = 6.0
-offset_top = 3.0
-offset_right = 241.0
-offset_bottom = 21.0
-texture = SubResource("AtlasTexture_f074x")
-
-[node name="LifeBar" type="TextureRect" parent="CanvasLayer"]
-texture_filter = 1
-texture_repeat = 2
-offset_left = 8.0
-offset_top = 5.0
-offset_right = 16.0
-offset_bottom = 19.0
-texture = SubResource("AtlasTexture_2awsd")
-expand_mode = 1
-stretch_mode = 1
+[node name="CanvasLayer" parent="." instance=ExtResource("3_5ol6p")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.95, 1.95)
