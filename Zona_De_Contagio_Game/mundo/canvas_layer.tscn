@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://g0yfwqo3g4e6"]
+
+[ext_resource type="Script" path="res://mundo/canvas_layer.gd" id="1_2ww5b"]
+[ext_resource type="Texture2D" uid="uid://mw4x5787dmoy" path="res://assets/player/life bar.png" id="1_6plnv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f074x"]
+atlas = ExtResource("1_6plnv")
+region = Rect2(0, 0, 80, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hljgy"]
+atlas = ExtResource("1_6plnv")
+region = Rect2(0, 19, 6, 6)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_2ww5b")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 3.0
+offset_top = 26.0
+offset_right = 66.0
+offset_bottom = 49.0
+text = "Pontos: "
+
+[node name="GameOver" type="RichTextLabel" parent="."]
+offset_left = 3.0
+offset_top = 47.0
+offset_right = 149.0
+offset_bottom = 81.0
+
+[node name="LifeBar_vazia" type="TextureRect" parent="."]
+texture_filter = 1
+texture_repeat = 1
+offset_left = 6.0
+offset_top = 3.0
+offset_right = 241.0
+offset_bottom = 21.0
+texture = SubResource("AtlasTexture_f074x")
+
+[node name="LifeBar" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(8, 5)
+scale = Vector2(0.833333, 2.33333)
+texture = SubResource("AtlasTexture_hljgy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 6, 6)

@@ -2,7 +2,6 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED: float = 200
-const TURN_SPEED: float = 5
 @onready var _size: Vector2 = $Sprite2D.get_rect().size
 @export var _keys: Dictionary = {
 	"left":  "ui_left",
@@ -10,9 +9,6 @@ const TURN_SPEED: float = 5
 	"up":    "ui_up", 
 	"down":  "ui_down"}
 
-# Referências ao HUD
-@export var _score_label: NodePath
-@export var _health_label: NodePath
 # Exportar a variável de vida e inicializar os pontos
 @export var _health: int = 1000
 var _score: int = 0
@@ -64,23 +60,20 @@ func _shoot() -> void:
 	bullet.transform = $Muzzle.global_transform
 
 func _on_zombie_hit(amount: int):
-	print(_health)
+	#print(_health)
 	decrease_health(amount)
 
 func update_hud():
 	# Atualizar os labels no HUD
-	if _score_label:
-		#get_node(_score_label).text = "Score: %d" % _score
-		get_parent().update_score(_score)
-	if _health_label:
-		#get_node(_health_label).text = "Health: %d" % _health
-		get_parent().update_health(_health)
+	#get_node(_score_label).text = "Score: %d" % _score
+	get_parent().update_score(_score)
+	#get_node(_health_label).text = "Health: %d" % _health
+	get_parent().update_health(_health)
 
 func decrease_health(amount: int):
 	# Diminuir vida
 	_health -= amount
 	if _health <= 0:
-		queue_free()
 		get_parent().GameOver()
 	update_hud()
 

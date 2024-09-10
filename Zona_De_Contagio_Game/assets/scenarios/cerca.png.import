@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdw7v8qmhmskr"
-path="res://.godot/imported/zombi.png-bb3f77369044cc0f75774167d819a63b.ctex"
+uid="uid://boa4trexr1i16"
+path="res://.godot/imported/cerca.png-56a6d55b0acad1124bf74ce3ebe67aa7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://zombi/zombi.png"
-dest_files=["res://.godot/imported/zombi.png-bb3f77369044cc0f75774167d819a63b.ctex"]
+source_file="res://assets/scenarios/cerca.png"
+dest_files=["res://.godot/imported/cerca.png-56a6d55b0acad1124bf74ce3ebe67aa7.ctex"]
 
 [params]
 

@@ -23,17 +23,21 @@ func _on_zombie_hit(damage: int):
 func _atualiza_frame():
 	if health >= 100:
 		$AnimatedSprite2D.play("barricada100")
+		$AnimatedSprite2D2.play("barricada100")
 	elif health >= 75:
 		$AnimatedSprite2D.play("barricada75")
+		$AnimatedSprite2D2.play("barricada75")
 	elif health >= 50:
 		$AnimatedSprite2D.play("barricada50")
+		$AnimatedSprite2D2.play("barricada50")
 	elif health >= 25:
 		$AnimatedSprite2D.play("barricada25")
+		$AnimatedSprite2D2.play("barricada25")
 	elif health >= 0:
 		$AnimatedSprite2D.play("barricada0")
+		$AnimatedSprite2D2.play("barricada0")
 
 func _on_body_entered(body):
 	if body.is_in_group("Zombi"):
-		#var player = get_parent().find_child("Player",false)
 		var player = get_tree().get_nodes_in_group("Player")[0]
-		body.set("_player", player)
+		body.setFollow(player)

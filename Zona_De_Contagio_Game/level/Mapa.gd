@@ -11,10 +11,11 @@ func _process(delta):
 	pass
 
 func GameOver():
-	$CanvasLayer/GameOver.text = "Game Over"
+	$CanvasLayer.GameOver()
 
 func update_score(score: int):
-	$CanvasLayer/ScoreLabel.text = "Score: %d" % score
+	$CanvasLayer.update_score(score)
 
 func update_health(health: int):
-	$CanvasLayer/HealthLabel.text = "Health: %d" % health
+	$CanvasLayer.update_health(health)
+	#$CanvasLayer/LifeBar.rect_size.x = health * $CanvasLayer/LifeBar.texture.get_size().x

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j8il5mdap2uf"
-path="res://.godot/imported/player.png-1ad27fc2a62fa126eae918723933dd6f.ctex"
+uid="uid://dtpki4ggoh1xj"
+path="res://.godot/imported/bueiro.png-0525f76870f6e9e5a86c1e4e03173b5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/player.png"
-dest_files=["res://.godot/imported/player.png-1ad27fc2a62fa126eae918723933dd6f.ctex"]
+source_file="res://assets/scenarios/bueiro.png"
+dest_files=["res://.godot/imported/bueiro.png-0525f76870f6e9e5a86c1e4e03173b5a.ctex"]
 
 [params]
 
