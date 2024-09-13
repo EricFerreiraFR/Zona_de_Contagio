@@ -11,11 +11,11 @@ func _process(delta):
 	pass
 
 func GameOver():
-	$CanvasLayer.GameOver()
+	$HUDVidaPontos.GameOver()
 
 func update_score(score: int):
-	$CanvasLayer.update_score(score)
+	$HUDVidaPontos.update_score(score)
 
 func update_health(health: int):
-	$CanvasLayer.update_health(health)
+	$HUDVidaPontos.update_health(health)
 	#$CanvasLayer/LifeBar.rect_size.x = health * $CanvasLayer/LifeBar.texture.get_size().x
