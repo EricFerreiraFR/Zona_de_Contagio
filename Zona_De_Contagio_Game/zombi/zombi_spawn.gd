@@ -7,6 +7,7 @@ extends Node2D
 @export var ChanceDeSpawn: float = 0.3
 
 var _timer: Timer
+var level : int = 1
 
 
 func _ready() -> void:
