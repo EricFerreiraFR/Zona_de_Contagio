@@ -31,9 +31,10 @@ script = ExtResource("12_lgka1")
 player = NodePath("../Player")
 
 [node name="Door2" parent="." instance=ExtResource("14_c2e5e")]
-position = Vector2(-511, 327)
+position = Vector2(272, -16)
+rotation = 1.5771
 script = ExtResource("15_htf2a")
 
 [node name="Door" parent="." instance=ExtResource("14_c2e5e")]
-position = Vector2(247, -281)
+position = Vector2(-16, -80)
 script = ExtResource("16_m63x7")
