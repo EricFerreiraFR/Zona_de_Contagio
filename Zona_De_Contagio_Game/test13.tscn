@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvdnmfqseue7p"]
+
+[ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="1_ahy8j"]
+[ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="2_3pkbe"]
+
+[node name="door" type="Node2D"]
+
+[node name="cenario" parent="." instance=ExtResource("1_ahy8j")]
+
+[node name="PlayerShip" parent="." instance=ExtResource("2_3pkbe")]
