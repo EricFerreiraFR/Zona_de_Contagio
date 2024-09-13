@@ -6,8 +6,8 @@ func _init() -> void:
 	add_to_group("Barricada")
 
 func _ready():
-	set_collision_layer_value(6, true)
-	set_collision_mask_value(3, true)
+	#set_collision_layer_value(6, true)
+	#set_collision_mask_value(3, true)
 	_atualiza_frame()
 
 func _on_zombie_hit(damage: int):
@@ -17,8 +17,8 @@ func _on_zombie_hit(damage: int):
 	health -= damage
 	_atualiza_frame()
 	if health <= 0:
-		set_collision_layer_value(6, false)
-		set_collision_mask_value(3, false)
+		set_collision_layer_value(7, false)
+		#set_collision_mask_value(3, false)
 
 func _atualiza_frame():
 	if health >= 100:

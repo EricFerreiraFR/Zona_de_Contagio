@@ -40,7 +40,8 @@ toggleDoor={
 2d_physics/layer_3="Inimigo"
 2d_physics/layer_4="Objeto"
 2d_physics/layer_5="Projetil"
-2d_physics/layer_6="Barricada"
+2d_physics/layer_6="BarricadaPlayer"
+2d_physics/layer_7="BarricadaInimigo"
 
 [rendering]
 
