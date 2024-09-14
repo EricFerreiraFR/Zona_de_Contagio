@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_ks1kn"]
 [ext_resource type="Script" path="res://level/Mapa.gd" id="1_nym55"]
 [ext_resource type="Script" path="res://player/Camera.gd" id="2_tw5cj"]
-[ext_resource type="PackedScene" uid="uid://g0yfwqo3g4e6" path="res://mundo/canvas_layer.tscn" id="3_5ol6p"]
+[ext_resource type="PackedScene" uid="uid://g0yfwqo3g4e6" path="res://mundo/HUDVidaPontos.tscn" id="3_5ol6p"]
 [ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="3_fjdr7"]
 [ext_resource type="Script" path="res://mundo/door1.gd" id="7_hald1"]
 [ext_resource type="Script" path="res://mundo/doornv2.gd" id="8_0m4vp"]
