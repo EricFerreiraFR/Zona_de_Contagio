@@ -26,7 +26,7 @@ script = ExtResource("1_nym55")
 z_index = 100
 collision_layer = 10
 
-[node name="CanvasLayer" parent="." instance=ExtResource("3_5ol6p")]
+[node name="HUDVidaPontos" parent="." instance=ExtResource("3_5ol6p")]
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
