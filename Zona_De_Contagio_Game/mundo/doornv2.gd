@@ -15,7 +15,8 @@ func openDoor():
 
 
 func _process(delta):
-	#ativa no nivel dois
-	if player._score >= 1000 and isOpen == false:
+	#abre a porta
+	
+	if player._score >= 1500 and isOpen == false:
 		openDoor()
 
