@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="Zona_De_Contagio"
-run/main_scene="res://level/nivel1.tscn"
+run/main_scene="res://UI/menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://UI/GameIcon.png"
 
 [input]
 
@@ -45,6 +45,7 @@ toggleDoor={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.712129, 0.712129, 0.712129, 1)
