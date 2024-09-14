@@ -8,12 +8,14 @@ func _init() -> void:
 func _ready():
 	#set_collision_layer_value(6, true)
 	#set_collision_mask_value(3, true)
+	$Control/ProgressBar.value = 100
 	_atualiza_frame()
 
 func _on_zombie_hit(damage: int):
 	if health <= 0:
 		health = 0
 		return
+	$Control/ProgressBar.value = clamp(health, 0, 100)
 	health -= damage
 	_atualiza_frame()
 	if health <= 0:
