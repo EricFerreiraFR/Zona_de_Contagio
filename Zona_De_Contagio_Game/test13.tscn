@@ -1,10 +1,91 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvdnmfqseue7p"]
+[gd_scene load_steps=9 format=3 uid="uid://cvdnmfqseue7p"]
 
 [ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="1_ahy8j"]
 [ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="2_3pkbe"]
+[ext_resource type="PackedScene" uid="uid://g0yfwqo3g4e6" path="res://mundo/canvas_layer.tscn" id="3_8eq4j"]
+[ext_resource type="Script" path="res://player/Camera.gd" id="4_5gpao"]
+[ext_resource type="PackedScene" uid="uid://b6j53sf8wopdg" path="res://mundo/door.tscn" id="5_lrsh2"]
+[ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="6_ji43b"]
+[ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="7_h1uc3"]
+[ext_resource type="PackedScene" uid="uid://bcipuh0dy3pc8" path="res://zombi/zombi.tscn" id="8_4hxic"]
 
-[node name="door" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 
 [node name="cenario" parent="." instance=ExtResource("1_ahy8j")]
 
-[node name="PlayerShip" parent="." instance=ExtResource("2_3pkbe")]
+[node name="Player" parent="." instance=ExtResource("2_3pkbe")]
+z_index = 100
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_8eq4j")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.95, 1.95)
+script = ExtResource("4_5gpao")
+player = NodePath("../Player")
+
+[node name="Door" parent="." instance=ExtResource("5_lrsh2")]
+
+[node name="barricada" parent="." instance=ExtResource("6_ji43b")]
+position = Vector2(-82, 176)
+rotation = 1.5708
+
+[node name="barricada2" parent="." instance=ExtResource("6_ji43b")]
+position = Vector2(-82, 47)
+rotation = 1.5708
+
+[node name="barricada3" parent="." instance=ExtResource("6_ji43b")]
+position = Vector2(-82, -81)
+rotation = 1.5708
+
+[node name="barricada4" parent="." instance=ExtResource("6_ji43b")]
+position = Vector2(303, -16)
+rotation = 1.5708
+
+[node name="barricada5" parent="." instance=ExtResource("6_ji43b")]
+position = Vector2(303, 175)
+rotation = 1.5708
+
+[node name="barricada6" parent="." instance=ExtResource("6_ji43b")]
+position = Vector2(207, 272)
+
+[node name="barricada7" parent="." instance=ExtResource("6_ji43b")]
+position = Vector2(15, 273)
+
+[node name="barricada8" parent="." instance=ExtResource("6_ji43b")]
+position = Vector2(143, -143)
+
+[node name="ZombiSpaw" parent="." instance=ExtResource("7_h1uc3")]
+position = Vector2(-658, 419)
+_first_follow = NodePath("../barricada")
+
+[node name="ZombiSpaw2" parent="." instance=ExtResource("7_h1uc3")]
+position = Vector2(-802, 40)
+_first_follow = NodePath("../barricada2")
+
+[node name="ZombiSpaw3" parent="." instance=ExtResource("7_h1uc3")]
+position = Vector2(-595, -262)
+_first_follow = NodePath("../barricada3")
+
+[node name="ZombiSpaw4" parent="." instance=ExtResource("7_h1uc3")]
+position = Vector2(900, -54)
+_first_follow = NodePath("../barricada4")
+
+[node name="ZombiSpaw5" parent="." instance=ExtResource("7_h1uc3")]
+position = Vector2(894, 180)
+_first_follow = NodePath("../barricada5")
+
+[node name="ZombiSpaw6" parent="." instance=ExtResource("7_h1uc3")]
+position = Vector2(215, 688)
+_first_follow = NodePath("../barricada6")
+
+[node name="ZombiSpaw7" parent="." instance=ExtResource("7_h1uc3")]
+position = Vector2(-1, 678)
+_first_follow = NodePath("../barricada7")
+
+[node name="ZombiSpaw8" parent="." instance=ExtResource("7_h1uc3")]
+position = Vector2(146, -443)
+_first_follow = NodePath("../barricada8")
+
+[node name="Zombi" parent="." instance=ExtResource("8_4hxic")]
+position = Vector2(-252, 123)
+_followPath = NodePath("../barricada")

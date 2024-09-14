@@ -20,14 +20,11 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nym55")
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="Player" parent="." instance=ExtResource("1_ks1kn")]
 z_index = 100
 collision_layer = 10
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_5ol6p")]
-visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.95, 1.95)
@@ -78,5 +75,3 @@ position = Vector2(400, 624)
 [node name="ZombiSpaw4" parent="." instance=ExtResource("3_fjdr7")]
 position = Vector2(215, -294)
 _first_follow = NodePath("../barricada1")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
