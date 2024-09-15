@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwb8cl1qe74wd"]
+[gd_scene load_steps=20 format=3 uid="uid://dwb8cl1qe74wd"]
 
 [ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_ks1kn"]
 [ext_resource type="Script" path="res://level/Mapa.gd" id="1_nym55"]
@@ -7,22 +7,51 @@
 [ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="3_fjdr7"]
 [ext_resource type="Script" path="res://mundo/door1.gd" id="7_hald1"]
 [ext_resource type="Script" path="res://mundo/doornv2.gd" id="8_0m4vp"]
-[ext_resource type="PackedScene" uid="uid://bcipuh0dy3pc8" path="res://zombi/zombi.tscn" id="11_oqxbn"]
+[ext_resource type="Script" path="res://zombi/zombi.gd" id="11_xwu34"]
 [ext_resource type="PackedScene" uid="uid://b6j53sf8wopdg" path="res://mundo/door.tscn" id="11_yctor"]
+[ext_resource type="Texture2D" uid="uid://dk6seyucdx0jl" path="res://assets/zombies/zombie1.png" id="12_byura"]
 [ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="12_m4mg8"]
-[ext_resource type="PackedScene" uid="uid://eaau0thrwnhg" path="res://zombi/zombi2.tscn" id="12_sbqi8"]
-[ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="12_sl8rn"]
-[ext_resource type="PackedScene" uid="uid://cryfbvv17bo48" path="res://zombi/zombiTank.tscn" id="13_0uelo"]
-[ext_resource type="PackedScene" uid="uid://b60q4vpudo3v7" path="res://zombi/zombiExplode.tscn" id="14_qosl3"]
+[ext_resource type="PackedScene" uid="uid://bjgby10v1pwd2" path="res://zombi/zombi2.tscn" id="12_sbqi8"]
+[ext_resource type="PackedScene" path="res://cenario.tscn" id="12_sl8rn"]
+[ext_resource type="PackedScene" path="res://zombi/zombiTank.tscn" id="13_0uelo"]
+[ext_resource type="PackedScene" path="res://zombi/zombiExplode.tscn" id="14_qosl3"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xbhm"]
-vertices = PackedVector2Array(747, 264, 1364, -612, 1390, 921, 747, 279, 747, -9, 747, -24, 747, -105, -968, -586, 297, -106, 695, -24, 695, -9, 297, -22, 695, 86, 537, 86, 521, 138, 537, 138, 395, 599, 521, 86, 297, 86, 297, -10, 249, -10, 249, 88, 247, 88, 247, 136, 249, 136, 249, 343, 183, 343, 183, 392, 171, 392, 171, 343, 247, 392, 247, 616, 248, 616, 248, 650, -985, 938, 297, 650, 297, 648, 395, 648, 299, 599, 299, 344, 297, 344, 297, 138, 695, 138, 695, 264, 695, 535, 695, 599, 407, 599, 407, 648, 696, 648, 696, 650, 745, 650, 745, 648, 747, 648, 297, -105, 249, -106, 249, -105, 183, -105, 183, -56, 247, -56, 247, -55, 171, -56, 171, -105, -9, -105, -168, -105, -168, -73, -169, -73, -169, 360, -168, 360, -168, 394, -119, 394, -119, 392, -53, 392, -53, 343, -117, 343, -117, -56, -21, -56, 249, -22, 249, -55, 297, -55, 299, -55, 299, -56, 695, -56, -41, 343, -41, 392, 747, 535, 747, 520, 695, 520, 695, 279, -21, -105, -9, -56)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(1, 0, 4), PackedInt32Array(5, 1, 4), PackedInt32Array(1, 5, 6), PackedInt32Array(7, 1, 6, 8), PackedInt32Array(9, 5, 4, 10, 11), PackedInt32Array(10, 12, 13, 11), PackedInt32Array(14, 13, 15, 16), PackedInt32Array(13, 14, 17), PackedInt32Array(17, 18, 19), PackedInt32Array(20, 21, 22), PackedInt32Array(23, 24, 25, 26), PackedInt32Array(26, 27, 28, 29), PackedInt32Array(27, 30, 31), PackedInt32Array(31, 32, 33, 34), PackedInt32Array(35, 36, 37), PackedInt32Array(16, 38, 39, 14), PackedInt32Array(39, 40, 41, 14), PackedInt32Array(15, 42, 43, 16), PackedInt32Array(44, 45, 46), PackedInt32Array(47, 48, 49, 34), PackedInt32Array(50, 51, 52, 2), PackedInt32Array(6, 53, 8), PackedInt32Array(7, 8, 54), PackedInt32Array(54, 55, 56, 7), PackedInt32Array(57, 58, 59), PackedInt32Array(57, 59, 60), PackedInt32Array(56, 57, 60, 61), PackedInt32Array(7, 56, 61), PackedInt32Array(7, 61, 62), PackedInt32Array(63, 64, 65, 7), PackedInt32Array(66, 67, 68), PackedInt32Array(69, 70, 71), PackedInt32Array(72, 73, 74, 75, 59, 76, 20, 22), PackedInt32Array(59, 77, 76), PackedInt32Array(11, 78, 79, 9), PackedInt32Array(79, 80, 81, 9), PackedInt32Array(11, 13, 17, 19), PackedInt32Array(11, 19, 20, 76), PackedInt32Array(72, 22, 23, 82), PackedInt32Array(28, 27, 31), PackedInt32Array(23, 26, 29), PackedInt32Array(83, 28, 31, 34), PackedInt32Array(23, 29, 82), PackedInt32Array(72, 82, 83, 71), PackedInt32Array(50, 2, 34, 49), PackedInt32Array(2, 52, 84), PackedInt32Array(85, 2, 84), PackedInt32Array(86, 85, 84, 44), PackedInt32Array(86, 44, 46), PackedInt32Array(87, 86, 46, 16), PackedInt32Array(2, 85, 3), PackedInt32Array(43, 0, 3, 87), PackedInt32Array(16, 43, 87), PackedInt32Array(37, 16, 46, 47), PackedInt32Array(37, 47, 34, 35), PackedInt32Array(33, 35, 34), PackedInt32Array(71, 83, 34, 69), PackedInt32Array(68, 69, 34), PackedInt32Array(68, 34, 7, 66), PackedInt32Array(65, 66, 7), PackedInt32Array(88, 63, 7), PackedInt32Array(88, 7, 62), PackedInt32Array(88, 62, 89, 75), PackedInt32Array(59, 75, 89), PackedInt32Array(59, 89, 60)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-978, -596, 1374, -623, 1401, 931, -996, 949)])
+vertices = PackedVector2Array(747, 520, 1395, -613, 1398, 1443, 747, 535, 747, 279, 747, 264, 747, -9, 747, -24, 747, -105, -983, -630, 297, -106, 297, -105, 249, -106, 249, -105, 183, -105, 183, -56, 247, -56, 247, -55, 171, -56, 171, -105, -9, -105, -168, -105, -168, -73, -169, -73, -169, 360, -168, 360, -168, 394, -119, 394, -119, 392, -53, 392, 248, 650, -53, 343, -117, 343, -117, -56, -21, -56, 249, -22, 249, -10, 247, 88, 249, -55, 695, -9, 297, -22, 297, -55, 299, -55, 695, -24, 299, -56, 695, -56, 695, 86, 537, 86, 521, 138, 537, 138, 395, 599, 521, 86, 297, -10, 297, 86, 249, 88, 247, 136, 249, 136, 249, 343, 183, 343, 183, 392, 171, 392, 171, 343, 247, 392, 247, 616, 248, 616, 297, 650, 297, 648, 395, 648, 299, 599, 299, 344, 297, 344, 297, 138, 695, 138, 695, 264, 695, 279, 695, 535, 695, 599, 407, 599, 407, 648, 696, 648, 696, 650, -983, 1441, 745, 650, 745, 648, 747, 648, -41, 343, -41, 392, 695, 520, -21, -105, -9, -56)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(1, 0, 4), PackedInt32Array(5, 1, 4), PackedInt32Array(1, 5, 6), PackedInt32Array(7, 1, 6), PackedInt32Array(1, 7, 8), PackedInt32Array(9, 1, 8, 10), PackedInt32Array(8, 11, 10), PackedInt32Array(9, 10, 12), PackedInt32Array(12, 13, 14, 9), PackedInt32Array(15, 16, 17), PackedInt32Array(15, 17, 18), PackedInt32Array(14, 15, 18, 19), PackedInt32Array(9, 14, 19), PackedInt32Array(9, 19, 20), PackedInt32Array(21, 22, 23, 9), PackedInt32Array(24, 25, 26), PackedInt32Array(27, 28, 29, 30), PackedInt32Array(31, 32, 33, 34, 17, 35, 36, 37), PackedInt32Array(17, 38, 35), PackedInt32Array(39, 40, 41, 42, 43, 6), PackedInt32Array(42, 44, 45, 43), PackedInt32Array(43, 7, 6), PackedInt32Array(39, 46, 47, 40), PackedInt32Array(48, 47, 49, 50), PackedInt32Array(47, 48, 51), PackedInt32Array(40, 47, 51, 52), PackedInt32Array(51, 53, 52), PackedInt32Array(35, 40, 52, 36), PackedInt32Array(36, 54, 37), PackedInt32Array(55, 56, 57, 58), PackedInt32Array(58, 59, 60, 61), PackedInt32Array(59, 62, 63), PackedInt32Array(63, 64, 30), PackedInt32Array(65, 66, 67), PackedInt32Array(50, 68, 69, 48), PackedInt32Array(69, 70, 71, 48), PackedInt32Array(49, 72, 73, 50), PackedInt32Array(73, 5, 4, 74), PackedInt32Array(75, 76, 77), PackedInt32Array(78, 79, 80, 81), PackedInt32Array(82, 83, 84, 2), PackedInt32Array(82, 2, 81, 80), PackedInt32Array(31, 37, 55, 85), PackedInt32Array(60, 59, 63), PackedInt32Array(55, 58, 61), PackedInt32Array(86, 60, 63, 30), PackedInt32Array(55, 61, 85), PackedInt32Array(29, 31, 85, 86), PackedInt32Array(50, 73, 74), PackedInt32Array(50, 74, 87), PackedInt32Array(29, 86, 30), PackedInt32Array(2, 84, 3), PackedInt32Array(87, 0, 3, 75), PackedInt32Array(50, 87, 75, 77), PackedInt32Array(67, 50, 77, 78), PackedInt32Array(67, 78, 81, 65), PackedInt32Array(30, 65, 81), PackedInt32Array(27, 30, 81, 26), PackedInt32Array(26, 81, 9, 24), PackedInt32Array(23, 24, 9), PackedInt32Array(88, 21, 9), PackedInt32Array(88, 9, 20), PackedInt32Array(88, 20, 89, 34), PackedInt32Array(17, 34, 89), PackedInt32Array(17, 89, 18)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-993, -641, 1405, -623, 1409, 1454, -993, 1451)])
 source_geometry_group_name = &"navigation_polygon_source_group"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2tbva"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ykhjo"]
+radius = 4.0
+height = 22.0
+
+[sub_resource type="PackedScene" id="PackedScene_fshwt"]
+_bundled = {
+"conn_count": 5,
+"conns": PackedInt32Array(3, 0, 26, 25, 2, 0, 0, 3, 0, 28, 27, 2, 0, 0, 5, 0, 30, 29, 2, 0, 0, 6, 0, 30, 31, 2, 0, 0, 8, 0, 30, 32, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("Zombi", "collision_layer", "collision_mask", "motion_mode", "wall_min_slide_angle", "script", "CharacterBody2D", "Sprite2D", "texture_filter", "scale", "texture", "CollisionShape2D", "position", "shape", "Mao", "Area2D", "HitBarricada", "wait_time", "Timer", "HitPlayer", "NavigationAgent2D", "debug_enabled", "debug_path_custom_color", "TimerNavigation", "autostart", "_on_mao_body_entered", "body_entered", "_on_mao_body_exited", "body_exited", "_on_HitBarricada_timeout", "timeout", "_on_hitPlayer_timeout", "_on_timer_navigation_timeout"),
+"node_count": 9,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 6, 0, -1, 5, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 0, 0, 0, 7, 7, -1, 3, 8, 2, 9, 5, 10, 6, 0, 0, 0, 11, 11, -1, 2, 12, 7, 13, 8, 0, 0, 0, 15, 14, -1, 2, 1, 9, 2, 9, 0, 3, 0, 11, 11, -1, 2, 12, 10, 13, 11, 0, 3, 0, 18, 16, -1, 1, 17, 12, 0, 3, 0, 18, 19, -1, 0, 0, 0, 0, 20, 20, -1, 2, 21, 13, 22, 14, 0, 0, 0, 18, 23, -1, 2, 17, 15, 24, 13, 0),
+"variants": [4, 87, 1, 0.0, ExtResource("11_xwu34"), Vector2(1.5, 1.556), ExtResource("12_byura"), Vector2(-4, 0), SubResource("CapsuleShape2D_2tbva"), 34, Vector2(4, 0), SubResource("CapsuleShape2D_ykhjo"), 1.5, true, Color(1, 0, 0, 1), 0.5],
+"version": 3
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nym55")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(-1, 0)
+navigation_polygon = SubResource("NavigationPolygon_7xbhm")
+
+[node name="cenario" parent="NavigationRegion2D" instance=ExtResource("12_sl8rn")]
+position = Vector2(1, 0)
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -36,13 +65,6 @@ collision_layer = 10
 zoom = Vector2(1.95, 1.95)
 script = ExtResource("2_tw5cj")
 player = NodePath("../Player")
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(-1, 0)
-navigation_polygon = SubResource("NavigationPolygon_7xbhm")
-
-[node name="cenario" parent="NavigationRegion2D" instance=ExtResource("12_sl8rn")]
-position = Vector2(1, 0)
 
 [node name="Door" parent="." instance=ExtResource("11_yctor")]
 position = Vector2(-16, -80)
@@ -80,7 +102,7 @@ position = Vector2(400, 624)
 
 [node name="ZombiSpaw4" parent="." instance=ExtResource("3_fjdr7")]
 position = Vector2(215, -294)
-zombiNormal = ExtResource("11_oqxbn")
+zombiNormal = SubResource("PackedScene_fshwt")
 speedZombi = ExtResource("12_sbqi8")
 tankZombi = ExtResource("13_0uelo")
 explodeZombi = ExtResource("14_qosl3")

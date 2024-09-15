@@ -2,7 +2,7 @@ extends Node2D
 var count : int = 0
 var round : int = 1
 var level : int = 1
-var player: Node 	# Recebe o player 
+var player: Node 	# Recebe o player
 var quantiaZumbis : int = 10
 var waitRound = false
 

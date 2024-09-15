@@ -1,10 +1,15 @@
 extends CharacterBody2D
 
+#vida maxima que o zombi pode ter
+@export var _maxhealth: int = 100
+var _health = _maxhealth
+
 @export var _speed: float = 80.0
 #@export var _first_follow: NodePath
 @export var _followPath: NodePath
 var _follow: Node
 var _ultimaBarricada: Node
+var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
 
 func _init() -> void:
 	# Adiciona o zombi ao grupo "zombi"
@@ -63,11 +68,30 @@ func _on_mao_body_exited(body):
 	elif body.is_in_group("Player"):
 		$Mao/HitPlayer.stop()
 
+func _on_timer_navigation_timeout():
+	_makePath()
+
+func spawnLife():
+	var ChanceDeSpawn = 0.05
+	var vNrRand = randi() % 100
+	if((100*ChanceDeSpawn) < vNrRand):
+		return
+	var life = _lifeSpaw.instantiate()
+	if(life == null):
+		return
+	life.position = position
+	get_parent().add_child(life)
+
 func _on_defeated():
 	 # Notificar o player que o inimigo foi derrotado
 	var player = get_parent().get_node("Player")
 	player._on_enemy_defeated()
+	spawnLife()
 	queue_free()
 
-func _on_timer_navigation_timeout():
-	_makePath()
+func _on_get_hit(damage: int):
+	if damage <= 0:
+		return
+	_health -= damage
+	if _health <= 0:
+		_on_defeated()

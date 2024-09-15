@@ -11,6 +11,7 @@ const SPEED: float = 200
 
 # Exportar a variável de vida e inicializar os pontos
 @export var _health: int = 1000
+var _maxLife: int = _health
 var _score: int = 0
 
 @export var projetil: PackedScene
@@ -55,7 +56,7 @@ func _move_and_rotate(delta: float) -> void:
 	move_and_slide()
 
 func _shoot() -> void:
-	var bullet = projetil.instantiate()# as Area2D
+	var bullet = projetil.instantiate()
 	owner.add_child(bullet)
 	bullet.transform = $Muzzle.global_transform
 
@@ -77,6 +78,15 @@ func decrease_health(amount: int):
 		get_parent().GameOver()
 	update_hud()
 
+func increase_health(amount: int):
+	if(amount <= 0):
+		return
+	if(_health >= _maxLife):
+		return
+	# Diminuir vida
+	_health += amount
+	update_hud()
+
 func increase_score(amount: int):
 	# Aumentar pontuação
 	_score += amount
@@ -85,13 +95,3 @@ func increase_score(amount: int):
 func _on_enemy_defeated():
 	# Chamado quando um inimigo é derrotado
 	increase_score(100)
-
-
-
-func _clamp_screen() -> void:
-	position.x = clamp(position.x, _size.x / 2, _screen_size.x - _size.x / 2)
-	position.y = clamp(position.y, _size.y / 2, _screen_size.y - _size.y / 2)
-
-func _wrap_screen() -> void:
-	position.x = wrap(position.x, 0, _screen_size.x)
-	position.y = wrap(position.y, 0, _screen_size.y)

@@ -36,6 +36,7 @@ position = Vector2(4, 0)
 shape = SubResource("CapsuleShape2D_ykhjo")
 
 [node name="HitBarricada" type="Timer" parent="Mao"]
+wait_time = 1.5
 
 [node name="HitPlayer" type="Timer" parent="Mao"]
 
@@ -44,7 +45,7 @@ debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
 
 [node name="TimerNavigation" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 autostart = true
 
 [connection signal="body_entered" from="Mao" to="." method="_on_mao_body_entered"]

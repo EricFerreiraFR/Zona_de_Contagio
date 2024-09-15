@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://eaau0thrwnhg"]
+[gd_scene load_steps=5 format=3 uid="uid://bjgby10v1pwd2"]
 
 [ext_resource type="Script" path="res://zombi/zombiSpeed.gd" id="1_xmifc"]
 [ext_resource type="Texture2D" uid="uid://c4pb1bnigk5i0" path="res://assets/zombies/speedzombie.png" id="2_k6dn2"]
@@ -44,7 +44,7 @@ debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
 
 [node name="TimerNavigation" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.1
 autostart = true
 
 [connection signal="body_entered" from="Mao" to="." method="_on_mao_body_entered"]

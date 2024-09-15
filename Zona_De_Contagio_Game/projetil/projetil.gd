@@ -2,6 +2,7 @@ extends Area2D
 
 @export var speed: float = 400.0
 @export var lifetime: float = 5.0
+@export var damage: int = 100
 
 var _speed = 750
 
@@ -25,8 +26,8 @@ func _time_out():
 
 func _on_body_entered(body):
 	if body.is_in_group("Zombi"):
-		body._on_defeated()
-		queue_free()
+		body._on_get_hit(damage)
+		self.queue_free()
 	elif body.is_in_group("Barricada"):
 		return
 	else:
