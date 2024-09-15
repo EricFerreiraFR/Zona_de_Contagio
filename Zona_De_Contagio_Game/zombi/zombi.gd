@@ -10,9 +10,10 @@ var _health = _maxhealth
 var _follow: Node
 var _ultimaBarricada: Node
 var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
+var _calculatePath: bool = true
+var countCalculatePath: int = 0
 
 func _init() -> void:
-	# Adiciona o zombi ao grupo "zombi"
 	add_to_group("Zombi")
 
 func _ready() -> void:
@@ -22,7 +23,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if _follow:
-		var nextPostion: Vector2 = $NavigationAgent2D.get_next_path_position()
+		var nextPostion: Vector2
+		if(_calculatePath):
+			nextPostion = $NavigationAgent2D.get_next_path_position()
+		else:
+			nextPostion = _follow.global_position
+		
 		# Calcula a direção até o jogador
 		#var direction = ($NavigationAgent2D.get_next_path_position() - global_position).normalized()
 		var direction = self.global_position.direction_to(nextPostion)
@@ -46,13 +52,16 @@ func setFollow(newFollow: Node):
 	_makePath()
 
 func _on_mao_body_entered(body):
+	_calculatePath = true
 	if body.is_in_group("Barricada"):
 		_ultimaBarricada = body
 		body._on_zombie_hit(10)
 		$Mao/HitBarricada.start(2)
+		_calculatePath = false
 	elif body.is_in_group("Player"):
 		body._on_zombie_hit(10)
 		$Mao/HitPlayer.start(1)
+		_calculatePath = false
 
 func _on_HitBarricada_timeout():
 	if _ultimaBarricada != null:
@@ -69,7 +78,12 @@ func _on_mao_body_exited(body):
 		$Mao/HitPlayer.stop()
 
 func _on_timer_navigation_timeout():
-	_makePath()
+	if(_calculatePath):
+		_makePath()
+	#	countCalculatePath += 1
+	#if (countCalculatePath > 5):
+	#	_calculatePath = false
+	#	countCalculatePath = 0
 
 func spawnLife():
 	var ChanceDeSpawn = 0.05
@@ -95,3 +109,6 @@ func _on_get_hit(damage: int):
 	_health -= damage
 	if _health <= 0:
 		_on_defeated()
+
+func _on_navigation_agent_target_reached():
+	_calculatePath = false

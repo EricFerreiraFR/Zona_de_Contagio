@@ -28,8 +28,8 @@ position = Vector2(-4, 0)
 shape = SubResource("CapsuleShape2D_2tbva")
 
 [node name="Mao" type="Area2D" parent="."]
-collision_layer = 34
-collision_mask = 34
+collision_layer = 35
+collision_mask = 35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mao"]
 position = Vector2(4, 0)
@@ -45,11 +45,12 @@ debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
 
 [node name="TimerNavigation" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.505
 autostart = true
 
 [connection signal="body_entered" from="Mao" to="." method="_on_mao_body_entered"]
 [connection signal="body_exited" from="Mao" to="." method="_on_mao_body_exited"]
 [connection signal="timeout" from="Mao/HitBarricada" to="." method="_on_HitBarricada_timeout"]
 [connection signal="timeout" from="Mao/HitPlayer" to="." method="_on_hitPlayer_timeout"]
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_target_reached"]
 [connection signal="timeout" from="TimerNavigation" to="." method="_on_timer_navigation_timeout"]
