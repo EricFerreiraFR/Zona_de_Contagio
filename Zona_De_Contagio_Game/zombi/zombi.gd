@@ -75,10 +75,10 @@ func _on_timer_navigation_timeout():
 	_makePath()
 
 func spawnLife():
-	var ChanceDeSpawn = 0.03
+	var ChanceDeSpawn = 0.05
 	var vNrRand = randi() % 100
-	#if((100*ChanceDeSpawn) < vNrRand):
-	#	return
+	if((100*ChanceDeSpawn) < vNrRand):
+		return
 	var life = _lifeSpaw.instantiate()
 	if(life == null):
 		return

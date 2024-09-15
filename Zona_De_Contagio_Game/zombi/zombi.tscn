@@ -36,6 +36,7 @@ position = Vector2(4, 0)
 shape = SubResource("CapsuleShape2D_ykhjo")
 
 [node name="HitBarricada" type="Timer" parent="Mao"]
+wait_time = 1.5
 
 [node name="HitPlayer" type="Timer" parent="Mao"]
 

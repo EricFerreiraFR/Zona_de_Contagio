@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b0mnfdm3tjokl"]
+[gd_scene load_steps=15 format=3 uid="uid://b0mnfdm3tjokl"]
 
 [ext_resource type="Script" path="res://mundo/barricada.gd" id="1_rv3dc"]
 [ext_resource type="Texture2D" uid="uid://dtylaig2a73ut" path="res://assets/scenarios/barricata janela-Sheet.png" id="2_fwsde"]
@@ -82,6 +82,9 @@ bg_color = Color(1, 0, 0, 0.745098)
 ProgressBar/styles/background = SubResource("StyleBoxFlat_ltmrm")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_4078o")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ax64t"]
+radius = 43.0
+
 [node name="barricada" type="StaticBody2D"]
 collision_layer = 96
 collision_mask = 2
@@ -120,6 +123,26 @@ offset_right = 4.0
 offset_bottom = -14.0
 size_flags_horizontal = 4
 
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -6.0
+offset_right = 183.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+text = "Teste"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+justification_flags = 161
+
 [node name="ProgressBar" type="ProgressBar" parent="Control"]
 clip_contents = true
 layout_mode = 1
@@ -138,4 +161,15 @@ scale = Vector2(0.1, 0.1)
 theme = SubResource("Theme_v0pie")
 fill_mode = 1
 
+[node name="PlayerNear" type="Area2D" parent="."]
+position = Vector2(0, -9)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerNear"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_ax64t")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="PlayerNear" to="." method="_on_player_near_body_entered"]
+[connection signal="body_exited" from="PlayerNear" to="." method="_on_player_near_body_exited"]
