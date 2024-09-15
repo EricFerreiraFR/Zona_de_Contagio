@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var _speed: float = 100.0
+@export var _speed: float = 140.0
 #@export var _first_follow: NodePath
 @export var _followPath: NodePath
 var _follow: Node
@@ -8,7 +8,7 @@ var _ultimaBarricada: Node
 
 func _init() -> void:
 	# Adiciona o zombi ao grupo "zombi"
-	add_to_group("ZombiSpeed")
+	add_to_group("Zombi")
 
 func _ready() -> void:
 	# Obtém a referência ao jogador usando o NodePath
@@ -43,18 +43,18 @@ func setFollow(newFollow: Node):
 func _on_mao_body_entered(body):
 	if body.is_in_group("Barricada"):
 		_ultimaBarricada = body
-		body._on_zombie_hit(10)
+		body._on_zombie_hit(5)
 		$Mao/HitBarricada.start(2)
 	elif body.is_in_group("Player"):
-		body._on_zombie_hit(10)
+		body._on_zombie_hit(5)
 		$Mao/HitPlayer.start(1)
 
 func _on_HitBarricada_timeout():
 	if _ultimaBarricada != null:
-		_ultimaBarricada._on_zombie_hit(10)
+		_ultimaBarricada._on_zombie_hit(5)
 
 func _on_hitPlayer_timeout():
-	_follow._on_zombie_hit(10)
+	_follow._on_zombie_hit(5)
 
 func _on_mao_body_exited(body):
 	if body.is_in_group("Barricada"):
