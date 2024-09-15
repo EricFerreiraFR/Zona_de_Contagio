@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy3hmfqs3si8s"]
+[gd_scene load_steps=9 format=3 uid="uid://cy3hmfqs3si8s"]
 
 [ext_resource type="Texture2D" uid="uid://do2k6mkblk7o6" path="res://assets/words/ZonaDeContagio.png" id="1_rl46u"]
 [ext_resource type="Script" path="res://UI/menu.gd" id="1_vk18w"]
 [ext_resource type="Texture2D" uid="uid://bkorf0clp0x7a" path="res://UI/Logo4_UTF.png" id="2_crbs4"]
 [ext_resource type="Texture2D" uid="uid://cycau3iepe4kp" path="res://UI/back.png" id="2_dpifc"]
+[ext_resource type="AudioStream" uid="uid://c1e24xxlfof8s" path="res://assets/sounds/click.wav" id="5_6lssb"]
 [ext_resource type="Texture2D" uid="uid://chyqkml8fpyn6" path="res://UI/teclas.png" id="5_sgtam"]
 [ext_resource type="Texture2D" uid="uid://nby3ut1s7ws8" path="res://UI/mouse.png" id="6_wnd3f"]
+[ext_resource type="AudioStream" uid="uid://ct0fxk1tba1vx" path="res://assets/sounds/suspense music.mp3" id="7_rxhq0"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -82,6 +84,10 @@ text = "Credito"
 layout_mode = 2
 text = "Sair"
 
+[node name="Click" type="AudioStreamPlayer" parent="Main/VBoxContainer"]
+stream = ExtResource("5_6lssb")
+volume_db = -2.019
+
 [node name="Instrucoes" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -116,11 +122,13 @@ modulate = Color(1, 0.0980392, 0, 1)
 layout_mode = 0
 offset_left = 680.0
 offset_top = 26.0
-offset_right = 1144.0
+offset_right = 1164.0
 offset_bottom = 206.0
 bbcode_enabled = true
-text = "Escreve os créditos ai!
-Para ajustar certinho o tamanho, vc vai mexer nessa mesma aba, em control->layout->transform, e mexer no size e ajustar conforme precise"
+text = "UTFPR
+Agradecimento ao professor da matéria de desenvolvimento de jogos. E aos amigos que nos ajudaram.
+
+Autores: Eric Ferreira, Lucas A. Seemund e Matheus K. Nakao."
 
 [node name="Voltar" type="Button" parent="Creditos"]
 layout_mode = 0
@@ -129,6 +137,10 @@ offset_right = 55.0
 offset_bottom = 599.0
 scale = Vector2(2.2657, 2.2657)
 text = "Voltar"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rxhq0")
+volume_db = -14.987
 
 [connection signal="pressed" from="Main/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Instrucoes" to="." method="_on_instrucoes_pressed"]

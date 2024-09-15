@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dwb8cl1qe74wd"]
+[gd_scene load_steps=21 format=3 uid="uid://dwb8cl1qe74wd"]
 
 [ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_ks1kn"]
 [ext_resource type="Script" path="res://level/Mapa.gd" id="1_nym55"]
@@ -46,25 +46,14 @@ _bundled = {
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_nym55")
 
+[node name="Timer" type="Timer" parent="."]
+
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-1, 0)
 navigation_polygon = SubResource("NavigationPolygon_7xbhm")
 
 [node name="cenario" parent="NavigationRegion2D" instance=ExtResource("12_sl8rn")]
 position = Vector2(1, 0)
-
-[node name="Timer" type="Timer" parent="."]
-
-[node name="Player" parent="." instance=ExtResource("1_ks1kn")]
-z_index = 100
-collision_layer = 10
-
-[node name="HUDVidaPontos" parent="." instance=ExtResource("3_5ol6p")]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.95, 1.95)
-script = ExtResource("2_tw5cj")
-player = NodePath("../Player")
 
 [node name="Door" parent="." instance=ExtResource("11_yctor")]
 position = Vector2(-16, -80)
@@ -107,5 +96,19 @@ speedZombi = ExtResource("12_sbqi8")
 tankZombi = ExtResource("13_0uelo")
 explodeZombi = ExtResource("14_qosl3")
 _first_follow = NodePath("../barricada1")
+
+[node name="HUDVidaPontos" parent="." instance=ExtResource("3_5ol6p")]
+
+[node name="Player" parent="." instance=ExtResource("1_ks1kn")]
+z_index = 100
+collision_layer = 10
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.95, 1.95)
+script = ExtResource("2_tw5cj")
+player = NodePath("../Player")
+
+[node name="shotgun" parent="." instance=ExtResource("16_vgp10")]
+position = Vector2(615, 579)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
