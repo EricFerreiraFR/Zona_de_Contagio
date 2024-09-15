@@ -18,6 +18,7 @@ var _score: int = 0
 var _input: Vector2 = Vector2.ZERO
 var _direction: Vector2 = Vector2.ZERO
 var _screen_size: Vector2
+var _has_shotgun: bool = false
 
 func _init() -> void:
 	add_to_group("Player")
@@ -30,8 +31,7 @@ func _process(_delta: float) -> void:
 	_input = Vector2.ZERO
 	# Obtenha a posição do mouse no espaço global
 	var mouse_position = get_global_mouse_position()
-	# Calcule a direção do jogador para o mouse
-
+	
 	_move_in_any_direction(0.05)
 	
 	_direction = (mouse_position - global_position).normalized()
@@ -57,9 +57,27 @@ func _move_and_rotate(delta: float) -> void:
 
 func _shoot() -> void:
 	$shoot.play()
-	var bullet = projetil.instantiate()
-	owner.add_child(bullet)
-	bullet.transform = $Muzzle.global_transform
+	
+	# Verifica se o player está com a shotgun
+	if _has_shotgun:
+		for i in range(3):  # Dispara 3 projéteis
+			var bullet = projetil.instantiate()
+			owner.add_child(bullet)
+			bullet.global_transform = $Muzzle.global_transform
+			
+			# Calcula um ângulo aleatório entre -15 e 15 graus (convertido para radianos)
+			var random_angle = deg_to_rad(randf_range(-15, 15))
+			
+			# Aplica a rotação ao projétil
+			bullet.rotation += random_angle
+			
+			# Define a direção do projétil com base no ângulo
+			var direction = (_direction.rotated(random_angle)).normalized()
+	else:
+		# Comportamento padrão para arma normal
+		var bullet = projetil.instantiate()
+		owner.add_child(bullet)
+		bullet.global_transform = $Muzzle.global_transform
 
 func _on_zombie_hit(amount: int):
 	#print(_health)

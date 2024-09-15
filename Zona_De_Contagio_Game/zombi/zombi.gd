@@ -20,6 +20,8 @@ func _ready() -> void:
 	# Obtém a referência ao jogador usando o NodePath
 	if(_followPath):
 		_follow = get_node(_followPath)
+	$Mao.set_collision_layer_value(1, true)
+	$Mao.set_collision_mask_value(1, true)
 
 func _physics_process(delta: float) -> void:
 	if _follow:
