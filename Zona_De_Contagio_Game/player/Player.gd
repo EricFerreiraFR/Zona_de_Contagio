@@ -56,6 +56,7 @@ func _move_and_rotate(delta: float) -> void:
 	move_and_slide()
 
 func _shoot() -> void:
+	$shoot.play()
 	var bullet = projetil.instantiate()
 	owner.add_child(bullet)
 	bullet.transform = $Muzzle.global_transform
