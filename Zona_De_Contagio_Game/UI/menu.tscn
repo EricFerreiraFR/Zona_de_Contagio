@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cy3hmfqs3si8s"]
 
-[ext_resource type="Texture2D" uid="uid://dwoc8bn8iwrxq" path="res://UI/Print.png" id="1_6qayf"]
 [ext_resource type="Texture2D" uid="uid://do2k6mkblk7o6" path="res://assets/words/ZonaDeContagio.png" id="1_rl46u"]
 [ext_resource type="Script" path="res://UI/menu.gd" id="1_vk18w"]
 [ext_resource type="Texture2D" uid="uid://bkorf0clp0x7a" path="res://UI/Logo4_UTF.png" id="2_crbs4"]
+[ext_resource type="Texture2D" uid="uid://cycau3iepe4kp" path="res://UI/back.png" id="2_dpifc"]
 [ext_resource type="Texture2D" uid="uid://chyqkml8fpyn6" path="res://UI/teclas.png" id="5_sgtam"]
 [ext_resource type="Texture2D" uid="uid://nby3ut1s7ws8" path="res://UI/mouse.png" id="6_wnd3f"]
 
@@ -30,9 +30,9 @@ offset_bottom = 664.0
 color = Color(0.819608, 0.611765, 0, 1)
 
 [node name="Background" type="Sprite2D" parent="UI"]
-position = Vector2(576, 320)
-scale = Vector2(1.0879, 1.0879)
-texture = ExtResource("1_6qayf")
+position = Vector2(575.5, 324)
+scale = Vector2(1.91833, 1.59506)
+texture = ExtResource("2_dpifc")
 
 [node name="Main" type="Control" parent="."]
 anchors_preset = 0
@@ -54,8 +54,8 @@ scale = Vector2(13.8324, 7.82505)
 color = Color(0, 0, 0, 0.337255)
 
 [node name="LogoGame" type="Sprite2D" parent="Main"]
-position = Vector2(560, 144)
-scale = Vector2(1.58022, 1.58022)
+position = Vector2(560, 153.702)
+scale = Vector2(1.58022, 1.49281)
 texture = ExtResource("1_rl46u")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Main"]
@@ -112,11 +112,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Creditos"]
+modulate = Color(1, 0.0980392, 0, 1)
 layout_mode = 0
-offset_left = 560.0
-offset_top = 208.0
-offset_right = 1024.0
-offset_bottom = 388.0
+offset_left = 680.0
+offset_top = 26.0
+offset_right = 1144.0
+offset_bottom = 206.0
 bbcode_enabled = true
 text = "Escreve os créditos ai!
 Para ajustar certinho o tamanho, vc vai mexer nessa mesma aba, em control->layout->transform, e mexer no size e ajustar conforme precise"

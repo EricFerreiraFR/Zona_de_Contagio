@@ -14,6 +14,9 @@ func update_score(score: int):
 	
 func updateRound(round: int):
 	$Round.text = "ROUND: %d" % round
+	
+func updateLevel(level: int):
+	$Nivel.text = "NIVEL: %d" % level
 
 func update_health(health: int):
 	$ProgressBar.value = clamp( health, 0, 1000)

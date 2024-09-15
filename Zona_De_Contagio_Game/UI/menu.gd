@@ -18,7 +18,8 @@ func _on_jogar_pressed():
 	get_tree().change_scene_to_file("res://level/nivel1.tscn")
 
 func _on_instrucoes_pressed():
-	pass # Replace with function body.
+	$Instrucoes/Voltar.grab_focus()
+	change_screen($Instrucoes)
 
 func _on_creditos_pressed():
 	$Creditos/Voltar.grab_focus()
