@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bcipuh0dy3pc8" path="res://zombi/zombi.tscn" id="11_oqxbn"]
 [ext_resource type="PackedScene" uid="uid://b6j53sf8wopdg" path="res://mundo/door.tscn" id="11_yctor"]
 [ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="12_m4mg8"]
-[ext_resource type="PackedScene" uid="uid://eaau0thrwnhg" path="res://zombi/zombi2.tscn" id="12_sbqi8"]
-[ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="12_sl8rn"]
+[ext_resource type="PackedScene" path="res://zombi/zombi2.tscn" id="12_sbqi8"]
+[ext_resource type="PackedScene" path="res://cenario.tscn" id="12_sl8rn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xbhm"]
 vertices = PackedVector2Array(747, 264, 1364, -612, 1390, 921, 747, 279, 747, -9, 747, -24, 747, -105, -968, -586, 297, -106, 695, -24, 695, -9, 297, -22, 695, 86, 537, 86, 521, 138, 537, 138, 395, 599, 521, 86, 297, 86, 297, -10, 249, -10, 249, 88, 247, 88, 247, 136, 249, 136, 249, 343, 183, 343, 183, 392, 171, 392, 171, 343, 247, 392, 247, 616, 248, 616, 248, 650, -985, 938, 297, 650, 297, 648, 395, 648, 299, 599, 299, 344, 297, 344, 297, 138, 695, 138, 695, 264, 695, 535, 695, 599, 407, 599, 407, 648, 696, 648, 696, 650, 745, 650, 745, 648, 747, 648, 297, -105, 249, -106, 249, -105, 183, -105, 183, -56, 247, -56, 247, -55, 171, -56, 171, -105, -9, -105, -168, -105, -168, -73, -169, -73, -169, 360, -168, 360, -168, 394, -119, 394, -119, 392, -53, 392, -53, 343, -117, 343, -117, -56, -21, -56, 249, -22, 249, -55, 297, -55, 299, -55, 299, -56, 695, -56, -41, 343, -41, 392, 747, 535, 747, 520, 695, 520, 695, 279, -21, -105, -9, -56)
@@ -81,6 +81,5 @@ position = Vector2(215, -294)
 zombiNormal = ExtResource("11_oqxbn")
 speedZombi = ExtResource("12_sbqi8")
 _first_follow = NodePath("../barricada1")
-
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
