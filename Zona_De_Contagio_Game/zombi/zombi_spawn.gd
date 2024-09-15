@@ -24,19 +24,20 @@ func _on_timer_timeout():
 	if mundo.quantiaZumbis >= zumbisSpawnados and mundo.waitRound == false:
 		if((100*ChanceDeSpawn) < vNrRand):
 			return
-		# Instancia o zombi
-		var zombi = zombiNormal.instantiate() as CharacterBody2D
-		
-		# Define a posição do spawn aleatoriamente dentro da área de spawn
-		zombi.position = position
+		if mundo.level == 7:
+			# Instancia o zombi
+			var zombi = zombiNormal.instantiate() as CharacterBody2D
+			
+			# Define a posição do spawn aleatoriamente dentro da área de spawn
+			zombi.position = position
 
-		# Configura o caminho do jogador para o zumbi
-		zombi.setFollow(get_node(_first_follow))
+			# Configura o caminho do jogador para o zumbi
+			zombi.setFollow(get_node(_first_follow))
 
-		# Adiciona o zumbi à cena
-		zumbisSpawnados += 1 # conta a quantidade de zumbis gerado
-		get_parent().add_child(zombi)
-		
+			# Adiciona o zumbi à cena
+			zumbisSpawnados += 1 # conta a quantidade de zumbis gerado
+			get_parent().add_child(zombi)
+			
 		var zombiEx = explodeZombi.instantiate() as CharacterBody2D
 		
 		# Define a posição do spawn aleatoriamente dentro da área de spawn
@@ -50,7 +51,7 @@ func _on_timer_timeout():
 		get_parent().add_child(zombiEx)
 		
 		
-		if mundo.level == 2 and zumbisSpawnados%2 == 0:
+		if mundo.level == 7 and zumbisSpawnados%2 == 0:
 			var speedZombie = speedZombi.instantiate() as CharacterBody2D
 					# Define a posição do spawn aleatoriamente dentro da área de spawn
 			speedZombie.position = position
