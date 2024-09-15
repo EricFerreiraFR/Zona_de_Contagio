@@ -38,12 +38,16 @@ func _process(delta):
 		updateLevel(level)
 	elif player._score >= 3000 and level == 2:
 		level = 3
+		updateLevel(level)
 	elif player._score >= 5000 and level == 3:
 		level = 4
+		updateLevel(level)
 	elif player._score >= 9000 and level == 4:
 		level = 5
+		updateLevel(level)
 	elif player._score >= 15000 and level == 5:
 		level = 6
+		updateLevel(level)
 	pass
 
 

@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cryfbvv17bo48"]
+
+[ext_resource type="Script" path="res://zombi/zombi.gd" id="1_3cprq"]
+[ext_resource type="Texture2D" uid="uid://mb6tuod54hau" path="res://assets/zombies/tank zombie.png" id="2_ooetq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2tbva"]
+radius = 11.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ykhjo"]
+radius = 5.0
+height = 44.0
+
+[node name="Zombi" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 87
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_3cprq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.556)
+texture = ExtResource("2_ooetq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
+shape = SubResource("CapsuleShape2D_2tbva")
+
+[node name="Mao" type="Area2D" parent="."]
+collision_layer = 34
+collision_mask = 34
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mao"]
+position = Vector2(10, 0)
+shape = SubResource("CapsuleShape2D_ykhjo")
+
+[node name="HitBarricada" type="Timer" parent="Mao"]
+
+[node name="HitPlayer" type="Timer" parent="Mao"]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+debug_path_custom_color = Color(1, 0, 0, 1)
+
+[node name="TimerNavigation" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="body_entered" from="Mao" to="." method="_on_mao_body_entered"]
+[connection signal="body_exited" from="Mao" to="." method="_on_mao_body_exited"]
+[connection signal="timeout" from="Mao/HitBarricada" to="." method="_on_HitBarricada_timeout"]
+[connection signal="timeout" from="Mao/HitPlayer" to="." method="_on_hitPlayer_timeout"]
+[connection signal="timeout" from="TimerNavigation" to="." method="_on_timer_navigation_timeout"]

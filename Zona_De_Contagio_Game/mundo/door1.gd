@@ -14,8 +14,6 @@ func toggleDoor():
 	openDoor()
 	# Tela de final
 
-
-
 func openDoor():
 	isOpen = true
 	$CollisionShape2D.disabled = true  # Desabilita a colisão ao abrir a porta
