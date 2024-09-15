@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var _followPath: NodePath
 var _follow: Node
 var _ultimaBarricada: Node
+var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
 
 func _init() -> void:
 	# Adiciona o zombi ao grupo "zombi"
@@ -67,7 +68,19 @@ func _on_defeated():
 	 # Notificar o player que o inimigo foi derrotado
 	var player = get_parent().get_node("Player")
 	player._on_enemy_defeated()
+	spawnLife()
 	queue_free()
 
 func _on_timer_navigation_timeout():
 	_makePath()
+
+func spawnLife():
+	var ChanceDeSpawn = 0.03
+	var vNrRand = randi() % 100
+	#if((100*ChanceDeSpawn) < vNrRand):
+	#	return
+	var life = _lifeSpaw.instantiate()
+	if(life == null):
+		return
+	life.position = position
+	get_parent().add_child(life)

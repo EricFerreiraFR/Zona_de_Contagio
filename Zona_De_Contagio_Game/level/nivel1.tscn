@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dwb8cl1qe74wd"]
+[gd_scene load_steps=27 format=3 uid="uid://dwb8cl1qe74wd"]
 
 [ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_ks1kn"]
 [ext_resource type="Script" path="res://level/Mapa.gd" id="1_nym55"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b6j53sf8wopdg" path="res://mundo/door.tscn" id="11_yctor"]
 [ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="12_m4mg8"]
 [ext_resource type="PackedScene" uid="uid://bcipuh0dy3pc8" path="res://zombi/zombi.tscn" id="14_xgolk"]
+[ext_resource type="PackedScene" uid="uid://ckqf6ytxjlgse" path="res://collectibles/lifeItem.tscn" id="16_yc1rq"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xbhm"]
 vertices = PackedVector2Array(330, 393, 1390, 921, -985, 938, 279, 393, 10, 297, 22, 297, -105, 297, -968, -586, -105, 182, 330, -119, 1364, -612, 330, 248, 328, 182, 328, 170, 329, -54, 330, -168, -56, 42, -56, -74, 280, -10, 280, 170, -56, 170, -56, 54, 280, 182, 214, 248, 202, 248, -105, 42, -105, 54, 330, 344, 328, 344, 328, 296, 330, 296, 328, 248, 280, 248, 214, 297, 202, 297, 279, 297, 10, 248, -56, 248, -56, 182, 328, -168, 328, -170, 280, -170, 280, -169, 150, -169, 150, -120, 138, -120, 138, -169, 278, -120, 278, -119, 280, -22, -56, -86, -56, -120, 42, -120, 280, -119, 328, -22, 328, -54, 329, -106, 328, -106, 328, -119, 54, -169, 22, 248, -105, 170, -105, -74, 328, -10, -105, -86, -105, -169, 42, -169, 54, -120)
@@ -422,3 +423,6 @@ _first_follow = NodePath("../barricada8")
 [node name="Zombi" parent="." instance=ExtResource("14_xgolk")]
 position = Vector2(-252, 123)
 _followPath = NodePath("../barricada")
+
+[node name="LifeItem" parent="." instance=ExtResource("16_yc1rq")]
+position = Vector2(269, -112)
