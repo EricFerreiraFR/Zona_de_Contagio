@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dwb8cl1qe74wd"]
+[gd_scene load_steps=14 format=3 uid="uid://dwb8cl1qe74wd"]
 
 [ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_ks1kn"]
 [ext_resource type="Script" path="res://level/Mapa.gd" id="1_nym55"]
@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="3_fjdr7"]
 [ext_resource type="Script" path="res://mundo/door1.gd" id="7_hald1"]
 [ext_resource type="Script" path="res://mundo/doornv2.gd" id="8_0m4vp"]
+[ext_resource type="PackedScene" uid="uid://bcipuh0dy3pc8" path="res://zombi/zombi.tscn" id="11_oqxbn"]
 [ext_resource type="PackedScene" uid="uid://b6j53sf8wopdg" path="res://mundo/door.tscn" id="11_yctor"]
 [ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="12_m4mg8"]
+[ext_resource type="PackedScene" uid="uid://eaau0thrwnhg" path="res://zombi/zombi2.tscn" id="12_sbqi8"]
 [ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="12_sl8rn"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xbhm"]
@@ -76,6 +78,8 @@ position = Vector2(400, 624)
 
 [node name="ZombiSpaw4" parent="." instance=ExtResource("3_fjdr7")]
 position = Vector2(215, -294)
+zombiNormal = ExtResource("11_oqxbn")
+speedZombi = ExtResource("12_sbqi8")
 _first_follow = NodePath("../barricada1")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

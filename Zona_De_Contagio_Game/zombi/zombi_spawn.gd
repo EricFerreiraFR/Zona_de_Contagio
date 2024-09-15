@@ -1,6 +1,7 @@
 extends Node2D
 
-@export var zombi_scene: PackedScene
+@export var zombiNormal: PackedScene
+@export var speedZombi: PackedScene
 @export var spawn_interval: float = 2.0
 @export var spawn_area_size: Vector2 = Vector2(200, 200)
 @export var _first_follow: NodePath
@@ -22,7 +23,7 @@ func _on_timer_timeout():
 		if((100*ChanceDeSpawn) < vNrRand):
 			return
 		# Instancia o zombi
-		var zombi = zombi_scene.instantiate() as CharacterBody2D
+		var zombi = zombiNormal.instantiate() as CharacterBody2D
 		
 		# Define a posição do spawn aleatoriamente dentro da área de spawn
 		zombi.position = position
@@ -33,8 +34,20 @@ func _on_timer_timeout():
 		# Adiciona o zumbi à cena
 		zumbisSpawnados += 1 # conta a quantidade de zumbis gerado
 		get_parent().add_child(zombi)
-	elif mundo.waitRound and zumbisSpawnados > 0:
 		
+		if mundo.level == 2 and zumbisSpawnados%2 == 0:
+			var speedZombie = speedZombi.instantiate() as CharacterBody2D
+					# Define a posição do spawn aleatoriamente dentro da área de spawn
+			speedZombie.position = position
+
+			# Configura o caminho do jogador para o zumbi
+			speedZombie.setFollow(get_node(_first_follow))
+
+			# Adiciona o zumbi à cena
+			zumbisSpawnados += 1 # conta a quantidade de zumbis gerado
+			get_parent().add_child(speedZombie)
+			
+	elif mundo.waitRound and zumbisSpawnados > 0:
 		zumbisSpawnados = 0	
 
 #var spawn_position = Vector2(

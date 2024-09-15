@@ -33,7 +33,7 @@ func _on_timer_timeout():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if player._score >= 1500 and level == 1:
+	if player._score >= 100 and level == 1:
 		level = 2 
 		updateLevel(level)
 	elif player._score >= 3000 and level == 2:
