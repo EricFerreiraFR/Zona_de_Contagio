@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 #@onready var animationTree : AnimationTree = get_node_or_null("AnimationTree")
 
-var _health = _maxhealth
+
 var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
 var _follow: Node
 var _ultimaBarricada: Node
@@ -72,7 +72,8 @@ func _on_HitBarricada_timeout():
 		_ultimaBarricada._on_zombie_hit(10)
 
 func _on_hitPlayer_timeout():
-	_follow._on_zombie_hit(10)
+	if _follow != null:
+		_follow._on_zombie_hit(10)
 
 func _on_mao_body_exited(body):
 	if body.is_in_group("Barricada"):

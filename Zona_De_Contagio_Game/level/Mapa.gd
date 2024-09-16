@@ -18,7 +18,7 @@ func _on_timer_timeout():
 	#tempo do roundN
 	if waitRound == false:
 		count += 1
-		if count == 60: #alterar o valor
+		if count == 10: #alterar o valor
 			roundN += 1
 			updateRound(roundN)
 			quantiaZumbis +=  randi() % 10 * level
@@ -26,7 +26,7 @@ func _on_timer_timeout():
 			waitRound = true
 	else :
 		count +=1
-		if count == 5:
+		if count == 30:
 			waitRound = false
 			count = 0
 	

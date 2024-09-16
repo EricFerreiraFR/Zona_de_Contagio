@@ -75,15 +75,15 @@ size = Vector2(20, 18.5)
 [sub_resource type="CircleShape2D" id="CircleShape2D_ax64t"]
 radius = 43.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltmrm"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xa1q"]
 bg_color = Color(0.0392157, 0.0392157, 0.0392157, 0.745098)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4078o"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgg68"]
 bg_color = Color(1, 0, 0, 0.745098)
 
 [sub_resource type="Theme" id="Theme_v0pie"]
-ProgressBar/styles/background = SubResource("StyleBoxFlat_ltmrm")
-ProgressBar/styles/fill = SubResource("StyleBoxFlat_4078o")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_1xa1q")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_fgg68")
 
 [node name="barricada" type="StaticBody2D"]
 collision_layer = 96

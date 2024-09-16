@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy3hmfqs3si8s"]
+[gd_scene load_steps=14 format=3 uid="uid://cy3hmfqs3si8s"]
 
 [ext_resource type="Texture2D" uid="uid://do2k6mkblk7o6" path="res://assets/words/ZonaDeContagio.png" id="1_rl46u"]
 [ext_resource type="Script" path="res://UI/menu.gd" id="1_vk18w"]
@@ -9,6 +9,45 @@
 [ext_resource type="Texture2D" uid="uid://nby3ut1s7ws8" path="res://UI/mouse.png" id="6_wnd3f"]
 [ext_resource type="AudioStream" uid="uid://ct0fxk1tba1vx" path="res://assets/sounds/suspense music.mp3" id="7_rxhq0"]
 [ext_resource type="Texture2D" uid="uid://c24dqb7oy6ohb" path="res://assets/words/gameover.png" id="9_ha884"]
+
+[sub_resource type="FontFile" id="FontFile_5bjv5"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/15/0/ascent = 0.0
+cache/0/15/0/descent = 0.0
+cache/0/15/0/underline_position = 0.0
+cache/0/15/0/underline_thickness = 0.0
+cache/0/15/0/scale = 1.0
+cache/0/15/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/15/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/14/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/15/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/14/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kmn21"]
+font = SubResource("FontFile_5bjv5")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pcoq8"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pk24m"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -107,10 +146,34 @@ position = Vector2(384, 304)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("5_sgtam")
 
+[node name="Label" type="Label" parent="Instrucoes/Keyboard"]
+offset_left = -52.0
+offset_top = 20.0
+offset_right = 42.0
+offset_bottom = 43.0
+text = "movimentação"
+label_settings = SubResource("LabelSettings_kmn21")
+
 [node name="Mouse" type="Sprite2D" parent="Instrucoes"]
-position = Vector2(712, 296)
+position = Vector2(838, 278)
 scale = Vector2(4.5, 4.5)
 texture = ExtResource("6_wnd3f")
+
+[node name="Label" type="Label" parent="Instrucoes/Mouse"]
+offset_left = -49.5556
+offset_top = 30.6667
+offset_right = 68.4444
+offset_bottom = 47.6667
+text = "botão esquerdo dispara "
+label_settings = SubResource("LabelSettings_pcoq8")
+
+[node name="Label2" type="Label" parent="Instrucoes/Mouse"]
+offset_left = -48.2222
+offset_top = 18.0
+offset_right = 60.7778
+offset_bottom = 32.0
+text = "botão direito interage "
+label_settings = SubResource("LabelSettings_pk24m")
 
 [node name="Creditos" type="Control" parent="."]
 visible = false
@@ -178,6 +241,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Voltar" type="Button" parent="Obrigado"]
+visible = false
 layout_mode = 0
 offset_top = 568.0
 offset_right = 55.0
@@ -197,13 +261,13 @@ color = Color(0, 0, 0, 0.584314)
 [node name="RichTextLabel" type="RichTextLabel" parent="Obrigado"]
 modulate = Color(1, 0.0980392, 0, 1)
 layout_mode = 0
-offset_left = 192.0
-offset_top = 266.0
-offset_right = 343.0
-offset_bottom = 291.0
+offset_left = 139.0
+offset_top = 151.0
+offset_right = 320.0
+offset_bottom = 213.0
 scale = Vector2(5, 5)
-bbcode_enabled = true
-text = "Obrigado por Jogar"
+text = "Obrigado por Jogar
+Sua pontuação : "
 
 [connection signal="pressed" from="Main/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Instrucoes" to="." method="_on_instrucoes_pressed"]

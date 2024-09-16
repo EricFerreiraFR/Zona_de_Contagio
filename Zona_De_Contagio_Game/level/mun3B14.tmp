@@ -1,10 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://c281vya5ywfmr"]
+[gd_scene load_steps=20 format=3 uid="uid://c281vya5ywfmr"]
 
 [ext_resource type="Script" path="res://level/Mapa.gd" id="1_iuxx2"]
 [ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="2_lbkyk"]
 [ext_resource type="PackedScene" uid="uid://b6j53sf8wopdg" path="res://mundo/door.tscn" id="3_1dch0"]
 [ext_resource type="Script" path="res://mundo/door1.gd" id="4_odvds"]
-[ext_resource type="Script" path="res://mundo/door3.gd" id="5_0q10x"]
 [ext_resource type="Script" path="res://mundo/doornv2.gd" id="5_aejrs"]
 [ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="6_xx5i8"]
 [ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="7_2rwel"]
@@ -41,41 +40,6 @@ position = Vector2(1, 0)
 [node name="Door" parent="." instance=ExtResource("3_1dch0")]
 position = Vector2(-16, -80)
 script = ExtResource("4_odvds")
-
-[node name="Control" type="Control" parent="Door"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -6.0
-offset_top = -24.0
-offset_right = 4.0
-offset_bottom = -14.0
-size_flags_horizontal = 4
-
-[node name="Label" type="Label" parent="Door/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -37.0
-offset_top = -7.0
-offset_right = 183.0
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.35, 0.35)
-text = "Adiquira 15000 
-pontos para fugir"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-justification_flags = 161
-
-[node name="Door3" parent="." instance=ExtResource("3_1dch0")]
-position = Vector2(528, 112)
-rotation = -0.00141597
-script = ExtResource("5_0q10x")
 
 [node name="Door2" parent="." instance=ExtResource("3_1dch0")]
 position = Vector2(273, -14)

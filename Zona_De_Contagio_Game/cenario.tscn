@@ -295,7 +295,6 @@ texture = ExtResource("10_ygxi4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala/sofa2/StaticBody2D"]
 position = Vector2(0.978327, 0.553181)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vke2j")
 
 [node name="sofa3" type="Sprite2D" parent="decoration/mesaSala"]
@@ -309,7 +308,6 @@ texture = ExtResource("10_ygxi4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala/sofa3/StaticBody2D"]
 position = Vector2(0.978327, 0.553181)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_vke2j")
 
 [node name="mesaSala2" type="Sprite2D" parent="decoration"]
@@ -334,7 +332,6 @@ texture = ExtResource("12_w0lvd")
 [node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira/StaticBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1kkb1")
 
 [node name="cadeira2" type="Sprite2D" parent="decoration/mesaSala2"]
@@ -347,7 +344,6 @@ texture = ExtResource("12_w0lvd")
 [node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira2/StaticBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1kkb1")
 
 [node name="cadeira3" type="Sprite2D" parent="decoration/mesaSala2"]
@@ -360,7 +356,6 @@ texture = ExtResource("12_w0lvd")
 [node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira3/StaticBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1kkb1")
 
 [node name="cadeira4" type="Sprite2D" parent="decoration/mesaSala2"]
@@ -373,7 +368,6 @@ texture = ExtResource("12_w0lvd")
 [node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira4/StaticBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1kkb1")
 
 [node name="cadeira5" type="Sprite2D" parent="decoration/mesaSala2"]
@@ -386,7 +380,6 @@ texture = ExtResource("12_w0lvd")
 [node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira5/StaticBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1kkb1")
 
 [node name="cadeira6" type="Sprite2D" parent="decoration/mesaSala2"]
@@ -399,7 +392,6 @@ texture = ExtResource("12_w0lvd")
 [node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira6/StaticBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1kkb1")
 
 [node name="cadeira7" type="Sprite2D" parent="decoration/mesaSala2"]
@@ -412,7 +404,6 @@ texture = ExtResource("12_w0lvd")
 [node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira7"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira7/StaticBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1kkb1")
 
 [node name="cadeira8" type="Sprite2D" parent="decoration/mesaSala2"]
@@ -425,7 +416,6 @@ texture = ExtResource("12_w0lvd")
 [node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira8"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira8/StaticBody2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1kkb1")
 
 [node name="Sprite2D" type="Sprite2D" parent="decoration"]

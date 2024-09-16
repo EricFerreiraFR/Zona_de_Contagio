@@ -1,7 +1,9 @@
 extends "res://zombi/zombi.gd"
 
 
-@onready var animationTree : AnimationPlayer = $AnimationPlayer
+@onready var animationPlayer : AnimationPlayer = $AnimationPlayer
+@onready var collider2: CollisionShape2D = $Mao/CollisionShape2D
+@onready var collider: CollisionShape2D = $CollisionShape2D  # Ajuste o caminho se necessário
 
 func _init() -> void:
 	# Adiciona o zombi ao grupo "zombi"
@@ -10,13 +12,26 @@ func _init() -> void:
 
 func _ready() -> void:
 	
-	animationTree.play("walk")
+	animationPlayer.play("walk")
 
+
+func disable_colliders():
+	if collider:
+		collider.disabled = true
+		collider2.disabled = true
+		
 func _on_hitPlayer_timeout():
-	animationTree.stop()
-	animationTree.play("explode")
-	_follow._on_zombie_hit(50)
-	_on_defeated2()
+	if _follow != null:
+		disable_colliders()
+		animationPlayer.stop()
+		animationPlayer.play("explode")
+		_follow._on_zombie_hit(50)
+		_follow = null
+		_on_defeated2()
 
+	
 func _on_defeated2():
+	
+	await get_tree().create_timer(0.7).timeout
 	queue_free()
+	

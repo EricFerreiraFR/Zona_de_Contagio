@@ -39,5 +39,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		playerNearby = false
 
 func _process(_delta):
-	if playerNearby and player._score >= 400  and Input.is_action_just_pressed("toggleDoor"):
+	print(playerNearby)
+	if playerNearby and player._score >= 100  and Input.is_action_just_pressed("toggleDoor"):
 		toggleDoor()

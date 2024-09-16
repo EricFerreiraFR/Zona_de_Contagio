@@ -4,6 +4,7 @@ var isOpen = false  # Estado da porta (fechada inicialmente)
 var playerNearby = false  # Variável para verificar se o jogador está próximo
 var player: Node
 
+
 func _ready():
 	# Inicializar o estado da porta
 	player = get_node("/root/Node2D/Player")
@@ -12,6 +13,9 @@ func toggleDoor():
 	
 	$AnimatedSprite2D.play("Open")
 	openDoor()
+	Global.Score = player._score
+	Global._is_Over = true
+	get_tree().change_scene_to_file("res://UI/menu.tscn")
 	# Tela de final
 
 func openDoor():
@@ -29,3 +33,4 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _process(_delta):
 	if playerNearby and player._score >= 15000  and Input.is_action_just_pressed("toggleDoor") and isOpen == false:
 		toggleDoor()
+		

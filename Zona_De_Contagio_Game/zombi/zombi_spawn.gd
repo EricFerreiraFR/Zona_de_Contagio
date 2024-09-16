@@ -15,16 +15,15 @@ var zumbisSpawnados: int = 0
 func _ready() -> void:
 	mundo = get_node("/root/Node2D")
 	$Timer.start()
-
+		
 func _on_timer_timeout():
 	
-	var vNrRand = randi() % 100
+	if mundo.quantiaZumbis > zumbisSpawnados and mundo.waitRound == false:
+		var vNrRand = randi() % 100
 	
-
-	if mundo.quantiaZumbis >= zumbisSpawnados and mundo.waitRound == false:
 		if((100*ChanceDeSpawn) < vNrRand):
 			return
-		
+			
 		# Instancia o zombi
 		var zombi = zombiNormal.instantiate() as CharacterBody2D
 		
@@ -50,7 +49,7 @@ func _on_timer_timeout():
 			zumbisSpawnados += 1 # conta a quantidade de zumbis gerado
 			get_parent().add_child(speedZombie)
 			
-		if mundo.level >= 4 and zumbisSpawnados%2 == 0:
+		if mundo.level >= 1 and zumbisSpawnados%2 == 0:
 			var zombiEx = explodeZombi.instantiate() as CharacterBody2D
 			
 			# Define a posição do spawn aleatoriamente dentro da área de spawn
@@ -65,6 +64,7 @@ func _on_timer_timeout():
 			
 	elif mundo.waitRound and zumbisSpawnados > 0:
 		zumbisSpawnados = 0	
+	
 
 #var spawn_position = Vector2(
 #	randf_range(-spawn_area_size.x / 2, spawn_area_size.x / 2),
