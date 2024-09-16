@@ -204,7 +204,9 @@ bbcode_enabled = true
 text = "UTFPR
 Agradecimento ao professor da matéria de desenvolvimento de jogos. E aos amigos que nos ajudaram.
 
-Autores: Eric Ferreira, Lucas A. Seemund e Matheus K. Nakao."
+Autores: Eric Ferreira, Lucas A. Seemund e Matheus K. Nakao.
+
+Musica: Donovan Jarvis (https://www.youtube.com/watch?v=KoxxBeH7J3Q)"
 
 [node name="Voltar" type="Button" parent="Creditos"]
 layout_mode = 0
