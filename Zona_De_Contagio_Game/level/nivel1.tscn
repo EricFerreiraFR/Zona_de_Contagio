@@ -12,10 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://dk6seyucdx0jl" path="res://assets/zombies/zombie1.png" id="12_byura"]
 [ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="12_m4mg8"]
 [ext_resource type="PackedScene" uid="uid://bjgby10v1pwd2" path="res://zombi/zombi2.tscn" id="12_sbqi8"]
-[ext_resource type="PackedScene" path="res://cenario.tscn" id="12_sl8rn"]
-[ext_resource type="PackedScene" uid="uid://c0jla6svduvnf" path="res://zombi/zombiTank.tscn" id="13_0uelo"]
+[ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="12_sl8rn"]
+[ext_resource type="PackedScene" uid="uid://cryfbvv17bo48" path="res://zombi/zombiTank.tscn" id="13_0uelo"]
 [ext_resource type="PackedScene" uid="uid://b60q4vpudo3v7" path="res://zombi/zombiExplode.tscn" id="14_qosl3"]
-[ext_resource type="PackedScene" uid="uid://danx045r1wpko" path="res://collectibles/shotgun.tscn" id="16_vgp10"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xbhm"]
 vertices = PackedVector2Array(747, 520, 1395, -613, 1398, 1443, 747, 535, 747, 279, 747, 264, 747, -9, 747, -24, 747, -105, -983, -630, 297, -106, 297, -105, 249, -106, 249, -105, 183, -105, 183, -56, 247, -56, 247, -55, 171, -56, 171, -105, -9, -105, -168, -105, -168, -73, -169, -73, -169, 360, -168, 360, -168, 394, -119, 394, -119, 392, -53, 392, 248, 650, -53, 343, -117, 343, -117, -56, -21, -56, 249, -22, 249, -10, 247, 88, 249, -55, 695, -9, 297, -22, 297, -55, 299, -55, 695, -24, 299, -56, 695, -56, 695, 86, 537, 86, 521, 138, 537, 138, 395, 599, 521, 86, 297, -10, 297, 86, 249, 88, 247, 136, 249, 136, 249, 343, 183, 343, 183, 392, 171, 392, 171, 343, 247, 392, 247, 616, 248, 616, 297, 650, 297, 648, 395, 648, 299, 599, 299, 344, 297, 344, 297, 138, 695, 138, 695, 264, 695, 279, 695, 535, 695, 599, 407, 599, 407, 648, 696, 648, 696, 650, -983, 1441, 745, 650, 745, 648, 747, 648, -41, 343, -41, 392, 695, 520, -21, -105, -9, -56)

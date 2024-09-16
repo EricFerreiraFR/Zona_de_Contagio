@@ -2,23 +2,27 @@ extends CharacterBody2D
 
 #vida maxima que o zombi pode ter
 @export var _maxhealth: int = 100
-var _health = _maxhealth
-
 @export var _speed: float = 80.0
-#@export var _first_follow: NodePath
 @export var _followPath: NodePath
+
+#@onready var animationTree : AnimationTree = get_node_or_null("AnimationTree")
+
+var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
 var _follow: Node
 var _ultimaBarricada: Node
 var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
 var _calculatePath: bool = true
 var countCalculatePath: int = 0
+var _health = _maxhealth
 
 func _init() -> void:
 	add_to_group("Zombi")
 
+
 func _ready() -> void:
-	# Obtém a referência ao jogador usando o NodePath
-	if(_followPath):
+
+
+	if _followPath:
 		_follow = get_node(_followPath)
 	$Mao.set_collision_layer_value(1, true)
 	$Mao.set_collision_mask_value(1, true)
@@ -88,11 +92,17 @@ func _on_timer_navigation_timeout():
 func spawnLife():
 	var ChanceDeSpawn = 0.05
 	var vNrRand = randi() % 100
-	if((100*ChanceDeSpawn) < vNrRand):
+	if (100 * ChanceDeSpawn) < vNrRand:
 		return
+
 	var life = _lifeSpaw.instantiate()
-	if(life == null):
+	if (life == null):
 		return
+
+	# Adiar a adição do novo nó até que o sistema de física termine
+	call_deferred("addLife", life)
+	
+func addLife(life):
 	life.position = position
 	get_parent().add_child(life)
 
