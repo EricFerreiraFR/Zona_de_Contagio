@@ -10,7 +10,7 @@ var _health = _maxhealth
 var _follow: Node
 var _ultimaBarricada: Node
 var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
-var _calculatePath: bool = true
+var _calculatePath: bool = true ;
 var countCalculatePath: int = 0
 
 func _init() -> void:
