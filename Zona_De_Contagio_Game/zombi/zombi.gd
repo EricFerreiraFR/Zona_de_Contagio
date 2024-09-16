@@ -10,7 +10,6 @@ extends CharacterBody2D
 var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
 var _follow: Node
 var _ultimaBarricada: Node
-var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
 var _calculatePath: bool = true
 var countCalculatePath: int = 0
 var _health = _maxhealth
