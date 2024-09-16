@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b60q4vpudo3v7"]
+[gd_scene load_steps=10 format=3 uid="uid://b60q4vpudo3v7"]
 
 [ext_resource type="Script" path="res://zombi/zombiExplode.gd" id="1_cgvrh"]
 [ext_resource type="Texture2D" uid="uid://ncyhqr67l3in" path="res://assets/zombies/explode zombie.png" id="2_r6a38"]
+[ext_resource type="AudioStream" uid="uid://4sskam3veprr" path="res://zombi/zumbigrunido.mp3" id="3_xgjas"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46nai"]
 radius = 12.0
@@ -106,6 +107,11 @@ debug_path_custom_color = Color(1, 0, 0, 1)
 [node name="TimerNavigation" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
+
+[node name="grunido" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xgjas")
+volume_db = -16.04
+autoplay = true
 
 [connection signal="body_entered" from="Mao" to="." method="_on_mao_body_entered"]
 [connection signal="body_exited" from="Mao" to="." method="_on_mao_body_exited"]

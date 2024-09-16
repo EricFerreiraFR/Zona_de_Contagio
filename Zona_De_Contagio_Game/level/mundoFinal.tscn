@@ -139,6 +139,7 @@ script = ExtResource("12_sng3f")
 zombiNormal = ExtResource("13_h2v4o")
 speedZombi = ExtResource("10_58yc3")
 tankZombi = ExtResource("11_g8e46")
+explodeZombi = ExtResource("12_n65e2")
 _first_follow = NodePath("../barricada7")
 
 [node name="barricada1" parent="." instance=ExtResource("6_xx5i8")]

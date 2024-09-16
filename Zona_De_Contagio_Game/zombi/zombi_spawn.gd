@@ -37,7 +37,7 @@ func _on_timer_timeout():
 		zumbisSpawnados += 1 # conta a quantidade de zumbis gerado
 		get_parent().add_child(zombi)		
 		
-		if mundo.level >= 2 and zumbisSpawnados%2 == 0:
+		if mundo.level >= 1 and zumbisSpawnados%2 == 0:
 			var speedZombie = speedZombi.instantiate() as CharacterBody2D
 					# Define a posição do spawn aleatoriamente dentro da área de spawn
 			speedZombie.position = position
@@ -49,7 +49,7 @@ func _on_timer_timeout():
 			zumbisSpawnados += 1 # conta a quantidade de zumbis gerado
 			get_parent().add_child(speedZombie)
 			
-		if mundo.level >= 1 and zumbisSpawnados%2 == 0:
+		if mundo.level >= 4 and zumbisSpawnados%2 == 0:
 			var zombiEx = explodeZombi.instantiate() as CharacterBody2D
 			
 			# Define a posição do spawn aleatoriamente dentro da área de spawn

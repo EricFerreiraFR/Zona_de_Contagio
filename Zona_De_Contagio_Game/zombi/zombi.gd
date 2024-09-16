@@ -18,7 +18,6 @@ var _health = _maxhealth
 func _init() -> void:
 	add_to_group("Zombi")
 
-
 func _ready() -> void:
 
 
@@ -49,6 +48,8 @@ func _physics_process(_delta: float) -> void:
 
 func _makePath() -> void:
 	if(_follow):
+		if is_inside_tree():
+			$grunido.play()
 		$NavigationAgent2D.set_target_position(_follow.global_position)
 
 func setFollow(newFollow: Node):
@@ -109,8 +110,9 @@ func addLife(life):
 
 func _on_defeated():
 	 # Notificar o player que o inimigo foi derrotado
+	$grunido.stop()
 	var player = get_parent().get_node("Player")
-	player._on_enemy_defeated()
+	player._on_enemy_defeated(50)
 	spawnLife()
 	queue_free()
 

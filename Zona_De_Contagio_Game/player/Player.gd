@@ -21,7 +21,7 @@ var _screen_size: Vector2
 var _has_shotgun: bool = false
 var _able_to_shoot: bool = true
 var _weapon_actual: int = 0
-var _weapon_invet: int = 1
+var _weapon_invet: int = 0
 var cont: int = 0
 
 func _init() -> void:
@@ -54,6 +54,7 @@ func _process(_delta: float) -> void:
 	if _has_shotgun == true and cont == 0:
 		cont += 1
 		_weapon_actual = 1
+		_weapon_invet = 1
 		$AnimatedSprite2D.play("shotgun")
 
 
@@ -156,6 +157,6 @@ func increase_score(amount: int):
 	_score += amount
 	update_hud()
 
-func _on_enemy_defeated():
+func _on_enemy_defeated(score1: int):
 	# Chamado quando um inimigo é derrotado
-	increase_score(100)
+	increase_score(score1)

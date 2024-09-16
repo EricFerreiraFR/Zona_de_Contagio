@@ -29,6 +29,14 @@ func _on_hitPlayer_timeout():
 		_follow = null
 		_on_defeated2()
 
+func _on_defeated():
+	 # Notificar o player que o inimigo foi derrotado
+	$grunido.stop()
+	var player = get_parent().get_node("Player")
+	player._on_enemy_defeated(70)
+	spawnLife()
+	queue_free()
+
 	
 func _on_defeated2():
 	
