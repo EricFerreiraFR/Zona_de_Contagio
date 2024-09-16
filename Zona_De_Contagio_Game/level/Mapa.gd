@@ -3,7 +3,7 @@ var count : int = 0
 var roundN : int = 1
 var level : int = 1
 var player: Node 	# Recebe o player
-var quantiaZumbis : int = 5
+var quantiaZumbis : int = 4 # quantidade incial de cada gerador
 var waitRound = false
 
 # Called when the node enters the scene tree for the first time.
