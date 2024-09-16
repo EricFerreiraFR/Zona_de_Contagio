@@ -7,10 +7,12 @@ extends CharacterBody2D
 
 #@onready var animationTree : AnimationTree = get_node_or_null("AnimationTree")
 
+var _health = _maxhealth
 var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
 var _follow: Node
 var _ultimaBarricada: Node
-var _health = _maxhealth
+var _calculatePath: bool = true ;
+var countCalculatePath: int = 0
 
 func _init() -> void:
 	add_to_group("Zombi")
