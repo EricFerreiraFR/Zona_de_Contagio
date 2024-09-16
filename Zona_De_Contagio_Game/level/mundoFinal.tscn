@@ -170,15 +170,16 @@ rotation = -3.13732
 
 [node name="HUDVidaPontos" parent="." instance=ExtResource("13_86gy0")]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-25, 170)
+zoom = Vector2(4, 4)
+script = ExtResource("15_f46xg")
+player = NodePath("../Player")
+
 [node name="Player" parent="." instance=ExtResource("14_ujk1a")]
 z_index = 100
 position = Vector2(-25, 168)
 collision_layer = 10
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-script = ExtResource("15_f46xg")
-player = NodePath("../Player")
 
 [node name="moldura" type="Sprite2D" parent="."]
 position = Vector2(440.875, -71)

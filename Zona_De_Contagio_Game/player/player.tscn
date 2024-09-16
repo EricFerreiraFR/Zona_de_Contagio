@@ -1,9 +1,48 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4lope2jmcye5"]
+[gd_scene load_steps=10 format=3 uid="uid://b4lope2jmcye5"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_px313"]
 [ext_resource type="PackedScene" uid="uid://dk6px6pb57v73" path="res://projetil/projetil.tscn" id="2_4o8er"]
 [ext_resource type="Texture2D" uid="uid://c3armhl7jxg87" path="res://assets/player/Player.png" id="3_kxqs7"]
 [ext_resource type="AudioStream" uid="uid://d3j7ic8ekovyt" path="res://assets/sounds/pistol-sound-effects-9mm.mp3" id="4_g8sdl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mdgb"]
+atlas = ExtResource("3_kxqs7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg5vh"]
+atlas = ExtResource("3_kxqs7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrot1"]
+atlas = ExtResource("3_kxqs7")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uo3i0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mdgb")
+}],
+"loop": true,
+"name": &"ak",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg5vh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrot1")
+}],
+"loop": true,
+"name": &"shotgun",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hht7g"]
 radius = 9.0
@@ -14,13 +53,22 @@ collision_mask = 47
 script = ExtResource("1_px313")
 projetil = ExtResource("2_4o8er")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(1.5, 1.616)
+sprite_frames = SubResource("SpriteFrames_uo3i0")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(4.76837e-07, 0)
 scale = Vector2(1.5, 1.616)
 texture = ExtResource("3_kxqs7")
 hframes = 3
 frame = 2
+
+[node name="Muzzle2" type="Marker2D" parent="."]
+position = Vector2(13, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 2)

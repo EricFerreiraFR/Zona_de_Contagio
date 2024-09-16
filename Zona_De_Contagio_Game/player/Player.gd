@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED: float = 200
+const SPEED: float = 100
 #@onready var _size: Vector2 = $Sprite2D.get_rect().size
 @export var _keys: Dictionary = {
 	"left":  "ui_left",
@@ -20,6 +20,9 @@ var _direction: Vector2 = Vector2.ZERO
 var _screen_size: Vector2
 var _has_shotgun: bool = false
 var _able_to_shoot: bool = true
+var _weapon_actual: int = 0
+var _weapon_invet: int = 1
+var cont: int = 0
 
 func _init() -> void:
 	add_to_group("Player")
@@ -39,8 +42,43 @@ func _process(_delta: float) -> void:
 	# Rotacione o jogador para apontar para o mouse
 	rotation = _direction.angle()
 	
+	if Input.is_action_just_pressed("changeUp"):
+		changeUp()
+	
+	if Input.is_action_just_pressed("changeDown"):
+		changeDown()
+		
 	if Input.is_action_just_pressed("MouseClick"):
 		_shoot()
+	
+	if _has_shotgun == true and cont == 0:
+		cont += 1
+		_weapon_actual = 1
+		$AnimatedSprite2D.play("shotgun")
+
+
+func changeUp():
+
+	if _weapon_actual  == _weapon_invet: 
+		_weapon_actual = 0
+	else:
+		_weapon_actual += 1
+		
+	if _weapon_actual == 0:
+		$AnimatedSprite2D.play("default")
+	if _weapon_actual == 1:
+		$AnimatedSprite2D.play("shotgun")
+
+func changeDown():
+	if _weapon_actual == 0: 
+		_weapon_actual  = _weapon_invet
+	else:
+		_weapon_actual -= 1
+		
+	if _weapon_actual == 0:
+		$AnimatedSprite2D.play("default")
+	if _weapon_actual == 1:
+		$AnimatedSprite2D.play("shotgun")
 
 func _physics_process(_delta) -> void:
 	pass
@@ -61,7 +99,7 @@ func _shoot() -> void:
 		return
 	_able_to_shoot = false
 	# Verifica se o player está com a shotgun
-	if _has_shotgun:
+	if _weapon_actual == 1:
 		$shotgun.play()
 		for i in range(3):  # Dispara 3 projéteis
 			var bullet = projetil.instantiate()
@@ -82,7 +120,7 @@ func _shoot() -> void:
 		# Comportamento padrão para arma normal
 		var bullet = projetil.instantiate()
 		owner.add_child(bullet)
-		bullet.global_transform = $Muzzle.global_transform
+		bullet.global_transform = $Muzzle2.global_transform
 		await get_tree().create_timer(0.3).timeout
 	_able_to_shoot = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy3hmfqs3si8s"]
+[gd_scene load_steps=15 format=3 uid="uid://cy3hmfqs3si8s"]
 
 [ext_resource type="Texture2D" uid="uid://do2k6mkblk7o6" path="res://assets/words/ZonaDeContagio.png" id="1_rl46u"]
 [ext_resource type="Script" path="res://UI/menu.gd" id="1_vk18w"]
@@ -46,6 +46,10 @@ font_size = 10
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_pk24m"]
+font_size = 10
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_n7xji"]
 font_size = 10
 font_color = Color(0, 0, 0, 1)
 
@@ -174,6 +178,14 @@ offset_right = 60.7778
 offset_bottom = 32.0
 text = "botão direito interage "
 label_settings = SubResource("LabelSettings_pk24m")
+
+[node name="Label3" type="Label" parent="Instrucoes/Mouse"]
+offset_left = -42.0
+offset_top = 43.5556
+offset_right = 52.0
+offset_bottom = 66.5556
+text = "Scroll altera a arma"
+label_settings = SubResource("LabelSettings_n7xji")
 
 [node name="Creditos" type="Control" parent="."]
 visible = false
