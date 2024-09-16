@@ -14,7 +14,7 @@ func openDoor():
 	$CollisionShape2D.disabled = true  # Desabilita a colisão ao abrir a porta
 
 
-func _process(delta):
+func _process(_delta):
 	#abre a porta
 	
 	if player._score >= 1500 and isOpen == false:

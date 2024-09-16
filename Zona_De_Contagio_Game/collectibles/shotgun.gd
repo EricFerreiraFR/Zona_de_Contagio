@@ -14,7 +14,7 @@ var current_angle = 0.0  # Ângulo atual
 var initial_position = Vector2()  # Posição inicial do item
 var time_passed = 0.0  # Acumulador de tempo para o movimento vertical
 
-var _player: Node2D  # Posição do player
+#var _player: Node2D  # Posição do player
 
 func _ready():
 	# Armazena a posição inicial para o movimento vertical

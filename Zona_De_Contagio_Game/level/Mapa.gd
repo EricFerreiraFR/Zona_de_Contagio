@@ -1,6 +1,6 @@
 extends Node2D
 var count : int = 0
-var round : int = 1
+var roundN : int = 1
 var level : int = 1
 var player: Node 	# Recebe o player
 var quantiaZumbis : int = 10
@@ -9,18 +9,18 @@ var waitRound = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	updateLevel(level)
-	updateRound(round)
+	updateRound(roundN)
 	player = get_node("/root/Node2D/Player")
 	$Timer.start()
 	
 	
 func _on_timer_timeout():
-	#tempo do round
+	#tempo do roundN
 	if waitRound == false:
 		count += 1
-		if count == 10: #alterar o valor
-			round += 1
-			updateRound(round)
+		if count == 60: #alterar o valor
+			roundN += 1
+			updateRound(roundN)
 			quantiaZumbis +=  randi() % 10 * level
 			count = 0
 			waitRound = true
@@ -31,9 +31,9 @@ func _on_timer_timeout():
 			count = 0
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
-	if player._score >= 100 and level == 1:
+	if player._score >= 1500 and level == 1:
 		level = 2 
 		updateLevel(level)
 	elif player._score >= 3000 and level == 2:
@@ -54,11 +54,11 @@ func _process(delta):
 func GameOver():
 	$HUDVidaPontos.GameOver()
 	
-func updateLevel(level: int):
-	$HUDVidaPontos.updateLevel(level)
+func updateLevel(Level: int):
+	$HUDVidaPontos.updateLevel(Level)
 	
-func updateRound(round: int):
-	$HUDVidaPontos.updateRound(round)
+func updateRound(Round: int):
+	$HUDVidaPontos.updateRound(Round)
 
 func update_score(score: int):
 	$HUDVidaPontos.update_score(score)

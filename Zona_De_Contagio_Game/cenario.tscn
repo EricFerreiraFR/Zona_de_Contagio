@@ -1,14 +1,17 @@
-[gd_scene load_steps=21 format=3 uid="uid://cqrtje8rbr1ub"]
+[gd_scene load_steps=28 format=3 uid="uid://cqrtje8rbr1ub"]
 
 [ext_resource type="Texture2D" uid="uid://e21q7r8j8m3f" path="res://assets/scenarios/chao.png" id="1_84gdb"]
 [ext_resource type="Texture2D" uid="uid://cmehmc5yh4f4a" path="res://assets/scenarios/decoração/baricadas.png" id="2_knyl3"]
 [ext_resource type="Texture2D" uid="uid://bqdrwryfgqd18" path="res://assets/scenarios/janela.png" id="2_pvif2"]
 [ext_resource type="Texture2D" uid="uid://ra60x1vrvf1j" path="res://assets/scenarios/paredes2.png" id="3_g4ce5"]
 [ext_resource type="Texture2D" uid="uid://ono26t6mglv1" path="res://assets/scenarios/paredes.png" id="4_6v3ut"]
-[ext_resource type="Texture2D" uid="uid://oppudix63i21" path="res://assets/weapons/molduraShot.png" id="5_bovnh"]
-[ext_resource type="Texture2D" uid="uid://tqie6x2vll1j" path="res://assets/scenarios/decoração/reflexo.png" id="8_45j2m"]
+[ext_resource type="Texture2D" uid="uid://chwgv3vp575lg" path="res://assets/scenarios/decoração/mesa.png" id="7_xc1fm"]
 [ext_resource type="Texture2D" uid="uid://c7v51drb58mw7" path="res://assets/scenarios/decoração/mesaTv.png" id="8_xgx0e"]
+[ext_resource type="Texture2D" uid="uid://d00i0r3dskpjt" path="res://assets/scenarios/decoração/sofaGrande.png" id="9_lu88g"]
+[ext_resource type="Texture2D" uid="uid://cqxjddaodi058" path="res://assets/scenarios/decoração/sofaPe.png" id="10_ygxi4"]
 [ext_resource type="Texture2D" uid="uid://uvf8exem16um" path="res://assets/scenarios/decoração/tv.png" id="11_4agv6"]
+[ext_resource type="Texture2D" uid="uid://mg0sj4f1q8j" path="res://assets/scenarios/decoração/PiaCozinha.png" id="12_d28g5"]
+[ext_resource type="Texture2D" uid="uid://bccl7gswbegmy" path="res://assets/scenarios/decoração/cadeira.png" id="12_w0lvd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0iwg"]
 texture = ExtResource("1_84gdb")
@@ -166,7 +169,19 @@ sources/3 = SubResource("TileSetAtlasSource_iq52h")
 size = Vector2(32, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5q80"]
-size = Vector2(36.0358, 20)
+size = Vector2(53.748, 37.9076)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vue1h"]
+size = Vector2(48, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vke2j"]
+size = Vector2(28.1514, 15.9577)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1kkb1"]
+size = Vector2(12.379, 11.163)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mupaa"]
+size = Vector2(63.4894, 15.9084)
 
 [node name="cenario" type="Node2D"]
 
@@ -185,80 +200,243 @@ tile_set = SubResource("TileSet_p8bv5")
 format = 2
 layer_0/tile_data = PackedInt32Array(-131077, 3, 3, -131076, 3, 0, -131075, 3, 0, -131074, 3, 0, -196608, 3, 0, -196606, 3, 0, -196607, 3, 0, -196605, 3, 0, -196604, 3, 0, -196602, 3, 0, -196601, 3, 0, -196603, 196609, 0, -196600, 2, 805306374, -65541, 3, 1610612736, -5, 3, 1610612736, 65531, 3, 1610612736, 131067, 3, 1610612736, 196603, 3, 1610612736, 262139, 3, 1610612736, 327675, 3, 1610612736, 393211, 3, 1610612736, 458747, 3, 1610612736, 524283, 3, 1610612736, 589819, 3, 1610612736, 655355, 3, 1610612736, 720891, 3, 1610612736, 786427, 3, 1610612739, 786428, 3, 805306368, 786429, 3, 805306368, 786431, 3, 805306368, 720896, 3, 805306368, 720897, 3, 805306368, 720898, 3, 805306368, 720899, 3, 805306368, 720900, 3, 805306368, 720902, 3, 805306368, 720903, 3, 805306368, 720904, 196610, 1610612739, 655368, 196610, 0, 589832, 196610, 0, 524296, 196610, 0, 458760, 196610, 0, 393224, 196610, 0, 327688, 196610, 0, 262152, 196610, 0, 196616, 196610, 1879048198, 131080, 2, 0, 65544, 2, 0, 8, 2, 0, -131064, 2, 0, 196617, 196610, 1342177280, 196618, 196610, 1342177280, 196620, 196610, 1342177280, 196619, 196610, 1342177280, 196621, 196610, 1342177280, 196622, 196610, 1342177280, 196623, 196610, 1342177280, 196625, 196610, 1342177280, 196626, 196610, 1342177280, 196627, 196610, 1342177280, 196628, 196610, 1342177280, 196629, 196610, 1342177280, 196630, 2, 1610612742, 786440, 3, 1610612742, 851976, 3, 1610612742, 917512, 3, 1610612742, 983048, 3, 1610612742, 1048584, 3, 1610612742, 1114120, 3, 1610612742, 1179656, 3, 1610612742, 1245192, 3, 1610612745, 262166, 3, 1342177286, 327702, 3, 1342177286, 393238, 3, 1342177286, 458774, 3, 1342177286, 589846, 3, 1342177286, 655382, 3, 1342177286, 720918, 3, 1342177286, 786454, 3, 1342177286, 851990, 3, 1342177286, 917526, 3, 1342177286, 1114134, 3, 1342177286, 983062, 3, 1342177286, 1179670, 3, 1342177286, 1245206, 3, 805306377, 1245205, 3, 805306374, 1245204, 3, 805306374, 1245203, 3, 805306374, 1245202, 3, 805306374, 1245201, 3, 805306374, 1245200, 3, 805306374, 1245199, 3, 805306374, 1245198, 3, 805306374, 1245197, 3, 805306374, 1245195, 3, 805306374, 1245194, 3, 805306374, 1245193, 3, 805306374, -196599, 3, 0, -196598, 3, 0, -196597, 3, 0, -196596, 3, 0, -196595, 3, 0, -196594, 3, 0, -196593, 3, 0, -196592, 3, 0, -196591, 3, 0, -196590, 3, 0, -196589, 3, 0, -196588, 3, 0, -196587, 3, 0, 131094, 3, 1342177280, 65558, 3, 1342177280, 22, 3, 1342177280, -131050, 3, 1342177280, -196586, 3, 1342177283, 786430, 196609, 805306368, 720901, 196609, 805306368, -65514, 196609, 1342177280, 524310, 589825, 1342177280, 1048598, 589825, 1342177280, 1245196, 589825, 805306368)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(445.875, -71)
-scale = Vector2(0.437499, 0.308594)
-texture = ExtResource("5_bovnh")
+[node name="decoration" type="Node" parent="."]
 
-[node name="baricata2" type="Sprite2D" parent="."]
+[node name="baricata2" type="Sprite2D" parent="decoration"]
 position = Vector2(104, 348)
 rotation = 3.13202
 texture = ExtResource("2_knyl3")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="baricata2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/baricata2"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="baricata2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/baricata2/StaticBody2D"]
 shape = SubResource("RectangleShape2D_661c5")
 
-[node name="baricata" type="Sprite2D" parent="."]
-position = Vector2(229, -60)
+[node name="baricata5" type="Sprite2D" parent="decoration/baricata2"]
+position = Vector2(-405.531, -259.893)
+rotation = 0.00410938
 texture = ExtResource("2_knyl3")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="baricata"]
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/baricata2/baricata5"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="baricata/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/baricata2/baricata5/StaticBody2D"]
 shape = SubResource("RectangleShape2D_661c5")
 
-[node name="baricata3" type="Sprite2D" parent="."]
-position = Vector2(689, -59)
+[node name="baricata" type="Sprite2D" parent="decoration/baricata2"]
+position = Vector2(-128.899, 406.785)
+rotation = -3.13202
 texture = ExtResource("2_knyl3")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="baricata3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/baricata2/baricata"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="baricata3/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/baricata2/baricata/StaticBody2D"]
 shape = SubResource("RectangleShape2D_661c5")
 
-[node name="baricata4" type="Sprite2D" parent="."]
-position = Vector2(700, 341)
-rotation = 1.56349
+[node name="baricata3" type="Sprite2D" parent="decoration/baricata2"]
+position = Vector2(-588.868, 401.383)
+rotation = -3.13202
 texture = ExtResource("2_knyl3")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="baricata4"]
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/baricata2/baricata3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="baricata4/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/baricata2/baricata3/StaticBody2D"]
 shape = SubResource("RectangleShape2D_661c5")
 
-[node name="baricata5" type="Sprite2D" parent="."]
-position = Vector2(512, 604)
-rotation = 3.13613
+[node name="baricata4" type="Sprite2D" parent="decoration/baricata2"]
+position = Vector2(-596.04, 1.29617)
+rotation = -1.56853
 texture = ExtResource("2_knyl3")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="baricata5"]
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/baricata2/baricata4"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="baricata5/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/baricata2/baricata4/StaticBody2D"]
 shape = SubResource("RectangleShape2D_661c5")
 
-[node name="mesaSala" type="Sprite2D" parent="."]
-position = Vector2(-115.974, 119.778)
+[node name="mesaSala" type="Sprite2D" parent="decoration"]
+position = Vector2(-115, 139)
 rotation = 1.56071
-scale = Vector2(1.47096, 1.2933)
+scale = Vector2(2.00885, 1.52561)
 texture = ExtResource("8_xgx0e")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="mesaSala"]
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mesaSala/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala/StaticBody2D"]
 position = Vector2(-0.192375, 0)
 shape = SubResource("RectangleShape2D_o5q80")
 
-[node name="tv2" type="Sprite2D" parent="."]
-position = Vector2(-70, 118)
-rotation = -3.13348
-scale = Vector2(1.16735, 1.16735)
-skew = -0.00116372
-texture = ExtResource("8_45j2m")
-
-[node name="tv" type="Sprite2D" parent="."]
-position = Vector2(-116, 119)
-rotation = 1.57454
-scale = Vector2(1.16735, 1)
+[node name="tv" type="Sprite2D" parent="decoration/mesaSala"]
+position = Vector2(-1.08498, 0.527504)
+rotation = 0.0182079
+scale = Vector2(0.581143, 0.655447)
+skew = -0.00770557
 texture = ExtResource("11_4agv6")
+
+[node name="sofa" type="Sprite2D" parent="decoration/mesaSala"]
+position = Vector2(-2.60601, -114.748)
+rotation = 0.0133251
+scale = Vector2(0.917324, 1.32176)
+skew = -0.00563943
+texture = ExtResource("9_lu88g")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala/sofa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala/sofa/StaticBody2D"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vue1h")
+
+[node name="sofa2" type="Sprite2D" parent="decoration/mesaSala"]
+position = Vector2(-48.7121, -74.7191)
+rotation = -1.09606
+scale = Vector2(1.12469, 1.11353)
+skew = 0.25313
+texture = ExtResource("10_ygxi4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala/sofa2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala/sofa2/StaticBody2D"]
+position = Vector2(0.978327, 0.553181)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vke2j")
+
+[node name="sofa3" type="Sprite2D" parent="decoration/mesaSala"]
+position = Vector2(42.9781, -86.6118)
+rotation = 1.18181
+scale = Vector2(1.14874, 1.08373)
+skew = -0.228849
+texture = ExtResource("10_ygxi4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala/sofa3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala/sofa3/StaticBody2D"]
+position = Vector2(0.978327, 0.553181)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_vke2j")
+
+[node name="mesaSala2" type="Sprite2D" parent="decoration"]
+position = Vector2(496, 340)
+rotation = 1.56071
+scale = Vector2(2.80908, 2.03062)
+texture = ExtResource("7_xc1fm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/StaticBody2D"]
+position = Vector2(-0.201317, 0.226318)
+shape = SubResource("RectangleShape2D_o5q80")
+
+[node name="cadeira" type="Sprite2D" parent="decoration/mesaSala2"]
+position = Vector2(-18.5972, -37.1958)
+rotation = -1.65763
+scale = Vector2(1.01023, 0.765406)
+skew = 0.00665927
+texture = ExtResource("12_w0lvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira/StaticBody2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1kkb1")
+
+[node name="cadeira2" type="Sprite2D" parent="decoration/mesaSala2"]
+position = Vector2(20.9263, -38.122)
+rotation = -1.24723
+scale = Vector2(1.01023, 0.765406)
+skew = 0.00665927
+texture = ExtResource("12_w0lvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira2/StaticBody2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1kkb1")
+
+[node name="cadeira3" type="Sprite2D" parent="decoration/mesaSala2"]
+position = Vector2(-1.83431, -41.3944)
+rotation = -1.34871
+scale = Vector2(1.01023, 0.765406)
+skew = 0.00665927
+texture = ExtResource("12_w0lvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira3/StaticBody2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1kkb1")
+
+[node name="cadeira4" type="Sprite2D" parent="decoration/mesaSala2"]
+position = Vector2(-18.8335, 44.0609)
+rotation = 1.57332
+scale = Vector2(1.01023, 0.765406)
+skew = 0.00665927
+texture = ExtResource("12_w0lvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira4/StaticBody2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1kkb1")
+
+[node name="cadeira5" type="Sprite2D" parent="decoration/mesaSala2"]
+position = Vector2(22.4878, 40.6975)
+rotation = 1.56902
+scale = Vector2(1.01023, 0.765406)
+skew = 0.00665927
+texture = ExtResource("12_w0lvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira5/StaticBody2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1kkb1")
+
+[node name="cadeira6" type="Sprite2D" parent="decoration/mesaSala2"]
+position = Vector2(1.80559, 45.3338)
+rotation = 1.57359
+scale = Vector2(1.01023, 0.765406)
+skew = 0.00665927
+texture = ExtResource("12_w0lvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira6/StaticBody2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1kkb1")
+
+[node name="cadeira7" type="Sprite2D" parent="decoration/mesaSala2"]
+position = Vector2(-35.4822, -16.2545)
+rotation = -1.94545
+scale = Vector2(1.01023, 0.765406)
+skew = 0.00665927
+texture = ExtResource("12_w0lvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira7/StaticBody2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1kkb1")
+
+[node name="cadeira8" type="Sprite2D" parent="decoration/mesaSala2"]
+position = Vector2(39.2609, -13.7344)
+rotation = -1.2522
+scale = Vector2(1.01023, 0.765406)
+skew = 0.00665927
+texture = ExtResource("12_w0lvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/mesaSala2/cadeira8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/mesaSala2/cadeira8/StaticBody2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1kkb1")
+
+[node name="Sprite2D" type="Sprite2D" parent="decoration"]
+position = Vector2(302, 557)
+rotation = -1.56642
+scale = Vector2(1.65387, 2.07436)
+texture = ExtResource("12_d28g5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="decoration/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="decoration/Sprite2D/StaticBody2D"]
+position = Vector2(0.300995, -0.240952)
+scale = Vector2(1, 0.999999)
+shape = SubResource("RectangleShape2D_mupaa")

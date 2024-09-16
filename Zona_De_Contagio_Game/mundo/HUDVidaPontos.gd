@@ -12,8 +12,8 @@ func GameOver():
 func update_score(score: int):
 	$ScoreLabel.text = "PONTOS: %d" % score
 	
-func updateRound(round: int):
-	$Round.text = "ROUND: %d" % round
+func updateRound(round1: int):
+	$Round.text = "ROUND: %d" % round1
 	
 func updateLevel(level: int):
 	$Nivel.text = "NIVEL: %d" % level

@@ -1,21 +1,24 @@
-[gd_scene load_steps=21 format=3 uid="uid://c281vya5ywfmr"]
+[gd_scene load_steps=24 format=3 uid="uid://c281vya5ywfmr"]
 
-[ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="1_ks1kn"]
-[ext_resource type="Script" path="res://level/Mapa.gd" id="1_nym55"]
-[ext_resource type="Script" path="res://player/Camera.gd" id="2_tw5cj"]
-[ext_resource type="PackedScene" uid="uid://g0yfwqo3g4e6" path="res://mundo/HUDVidaPontos.tscn" id="3_5ol6p"]
-[ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="3_fjdr7"]
-[ext_resource type="Script" path="res://mundo/door1.gd" id="7_hald1"]
-[ext_resource type="Script" path="res://mundo/doornv2.gd" id="8_0m4vp"]
-[ext_resource type="Script" path="res://zombi/zombi.gd" id="11_xwu34"]
-[ext_resource type="PackedScene" uid="uid://b6j53sf8wopdg" path="res://mundo/door.tscn" id="11_yctor"]
-[ext_resource type="Texture2D" uid="uid://dk6seyucdx0jl" path="res://assets/zombies/zombie1.png" id="12_byura"]
-[ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="12_m4mg8"]
-[ext_resource type="PackedScene" uid="uid://bjgby10v1pwd2" path="res://zombi/zombi2.tscn" id="12_sbqi8"]
-[ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="12_sl8rn"]
-[ext_resource type="PackedScene" uid="uid://cryfbvv17bo48" path="res://zombi/zombiTank.tscn" id="13_0uelo"]
-[ext_resource type="PackedScene" uid="uid://b60q4vpudo3v7" path="res://zombi/zombiExplode.tscn" id="14_qosl3"]
-[ext_resource type="PackedScene" uid="uid://54efs1alleuj" path="res://collectibles/shotgun.tscn" id="16_vgp10"]
+[ext_resource type="Script" path="res://level/Mapa.gd" id="1_iuxx2"]
+[ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="2_lbkyk"]
+[ext_resource type="PackedScene" uid="uid://b6j53sf8wopdg" path="res://mundo/door.tscn" id="3_1dch0"]
+[ext_resource type="Script" path="res://mundo/door1.gd" id="4_odvds"]
+[ext_resource type="Script" path="res://mundo/doornv2.gd" id="5_aejrs"]
+[ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="6_xx5i8"]
+[ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="7_2rwel"]
+[ext_resource type="Script" path="res://zombi/zombi.gd" id="8_qv4a6"]
+[ext_resource type="Texture2D" uid="uid://dk6seyucdx0jl" path="res://assets/zombies/zombie1.png" id="9_bfo7p"]
+[ext_resource type="PackedScene" uid="uid://bjgby10v1pwd2" path="res://zombi/zombi2.tscn" id="10_58yc3"]
+[ext_resource type="PackedScene" uid="uid://cryfbvv17bo48" path="res://zombi/zombiTank.tscn" id="11_g8e46"]
+[ext_resource type="Script" path="res://zombi/zombiSpawNv2.gd" id="12_itwod"]
+[ext_resource type="PackedScene" uid="uid://b60q4vpudo3v7" path="res://zombi/zombiExplode.tscn" id="12_n65e2"]
+[ext_resource type="Script" path="res://zombi/zombiSpawnNv4.gd" id="12_sng3f"]
+[ext_resource type="PackedScene" uid="uid://g0yfwqo3g4e6" path="res://mundo/HUDVidaPontos.tscn" id="13_86gy0"]
+[ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="14_ujk1a"]
+[ext_resource type="Script" path="res://player/Camera.gd" id="15_f46xg"]
+[ext_resource type="PackedScene" uid="uid://54efs1alleuj" path="res://collectibles/shotgun.tscn" id="16_lr7l4"]
+[ext_resource type="Texture2D" uid="uid://oppudix63i21" path="res://assets/weapons/molduraShot.png" id="17_505u5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_7xbhm"]
 vertices = PackedVector2Array(747, 520, 1395, -613, 1398, 1443, 747, 535, 747, 279, 747, 264, 747, -9, 747, -24, 747, -105, -983, -630, 297, -106, 297, -105, 249, -106, 249, -105, 183, -105, 183, -56, 247, -56, 247, -55, 171, -56, 171, -105, -9, -105, -168, -105, -168, -73, -169, -73, -169, 360, -168, 360, -168, 394, -119, 394, -119, 392, -53, 392, 248, 650, -53, 343, -117, 343, -117, -56, -21, -56, 249, -22, 249, -10, 247, 88, 249, -55, 695, -9, 297, -22, 297, -55, 299, -55, 695, -24, 299, -56, 695, -56, 695, 86, 537, 86, 521, 138, 537, 138, 395, 599, 521, 86, 297, -10, 297, 86, 249, 88, 247, 136, 249, 136, 249, 343, 183, 343, 183, 392, 171, 392, 171, 343, 247, 392, 247, 616, 248, 616, 297, 650, 297, 648, 395, 648, 299, 599, 299, 344, 297, 344, 297, 138, 695, 138, 695, 264, 695, 279, 695, 535, 695, 599, 407, 599, 407, 648, 696, 648, 696, 650, -983, 1441, 745, 650, 745, 648, 747, 648, -41, 343, -41, 392, 695, 520, -21, -105, -9, -56)
@@ -40,12 +43,12 @@ _bundled = {
 "node_count": 9,
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 6, 0, -1, 5, 1, 0, 2, 1, 3, 2, 4, 3, 5, 4, 0, 0, 0, 7, 7, -1, 3, 8, 2, 9, 5, 10, 6, 0, 0, 0, 11, 11, -1, 2, 12, 7, 13, 8, 0, 0, 0, 15, 14, -1, 2, 1, 9, 2, 9, 0, 3, 0, 11, 11, -1, 2, 12, 10, 13, 11, 0, 3, 0, 18, 16, -1, 1, 17, 12, 0, 3, 0, 18, 19, -1, 0, 0, 0, 0, 20, 20, -1, 2, 21, 13, 22, 14, 0, 0, 0, 18, 23, -1, 2, 17, 15, 24, 13, 0),
-"variants": [4, 87, 1, 0.0, ExtResource("11_xwu34"), Vector2(1.5, 1.556), ExtResource("12_byura"), Vector2(-4, 0), SubResource("CapsuleShape2D_2tbva"), 34, Vector2(4, 0), SubResource("CapsuleShape2D_ykhjo"), 1.5, true, Color(1, 0, 0, 1), 0.5],
+"variants": [4, 87, 1, 0.0, ExtResource("8_qv4a6"), Vector2(1.5, 1.556), ExtResource("9_bfo7p"), Vector2(-4, 0), SubResource("CapsuleShape2D_2tbva"), 34, Vector2(4, 0), SubResource("CapsuleShape2D_ykhjo"), 1.5, true, Color(1, 0, 0, 1), 0.5],
 "version": 3
 }
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_nym55")
+script = ExtResource("1_iuxx2")
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -53,66 +56,106 @@ script = ExtResource("1_nym55")
 position = Vector2(-1, 0)
 navigation_polygon = SubResource("NavigationPolygon_7xbhm")
 
-[node name="cenario" parent="NavigationRegion2D" instance=ExtResource("12_sl8rn")]
+[node name="cenario" parent="NavigationRegion2D" instance=ExtResource("2_lbkyk")]
 position = Vector2(1, 0)
 
-[node name="Door" parent="." instance=ExtResource("11_yctor")]
+[node name="Door" parent="." instance=ExtResource("3_1dch0")]
 position = Vector2(-16, -80)
-script = ExtResource("7_hald1")
+script = ExtResource("4_odvds")
 
-[node name="Door2" parent="." instance=ExtResource("11_yctor")]
+[node name="Door2" parent="." instance=ExtResource("3_1dch0")]
 position = Vector2(273, -14)
 rotation = -1.58221
-script = ExtResource("8_0m4vp")
+script = ExtResource("5_aejrs")
 
-[node name="barricada1" parent="." instance=ExtResource("12_m4mg8")]
+[node name="ZombiSpawn" parent="." instance=ExtResource("7_2rwel")]
+position = Vector2(215, -294)
+zombiNormal = SubResource("PackedScene_fshwt")
+speedZombi = ExtResource("10_58yc3")
+tankZombi = ExtResource("11_g8e46")
+explodeZombi = ExtResource("12_n65e2")
+_first_follow = NodePath("../barricada1")
+
+[node name="ZombiSpawn1" parent="." instance=ExtResource("7_2rwel")]
+position = Vector2(-275, 584)
+zombiNormal = SubResource("PackedScene_fshwt")
+speedZombi = ExtResource("10_58yc3")
+tankZombi = ExtResource("11_g8e46")
+explodeZombi = ExtResource("12_n65e2")
+_first_follow = NodePath("../barricada2")
+
+[node name="ZombiSpawn2" parent="." instance=ExtResource("7_2rwel")]
+position = Vector2(32, 701)
+zombiNormal = SubResource("PackedScene_fshwt")
+speedZombi = ExtResource("10_58yc3")
+tankZombi = ExtResource("11_g8e46")
+explodeZombi = ExtResource("12_n65e2")
+_first_follow = NodePath("../barricada3")
+
+[node name="ZombiSpawn3" parent="." instance=ExtResource("7_2rwel")]
+position = Vector2(1010, -32)
+script = ExtResource("12_itwod")
+
+[node name="ZombiSpawn4" parent="." instance=ExtResource("7_2rwel")]
+position = Vector2(1011, 275)
+script = ExtResource("12_sng3f")
+
+[node name="ZombiSpawn5" parent="." instance=ExtResource("7_2rwel")]
+position = Vector2(1001, 529)
+script = ExtResource("12_sng3f")
+_first_follow = NodePath("../barricada6")
+
+[node name="ZombiSpawn6" parent="." instance=ExtResource("7_2rwel")]
+position = Vector2(391, 813)
+script = ExtResource("12_sng3f")
+_first_follow = NodePath("../barricada7")
+
+[node name="barricada1" parent="." instance=ExtResource("6_xx5i8")]
 position = Vector2(176, -80)
 
-[node name="barricada2" parent="." instance=ExtResource("12_m4mg8")]
+[node name="barricada2" parent="." instance=ExtResource("6_xx5i8")]
 position = Vector2(-48, 368)
-rotation = 3.14251
+rotation = -3.14068
 
-[node name="barricada3" parent="." instance=ExtResource("12_m4mg8")]
+[node name="barricada3" parent="." instance=ExtResource("6_xx5i8")]
 position = Vector2(175, 368)
-rotation = -3.14566
+rotation = 3.13753
 
-[node name="barricada4" parent="." instance=ExtResource("12_m4mg8")]
+[node name="barricada4" parent="." instance=ExtResource("6_xx5i8")]
 position = Vector2(720, -15)
 rotation = 1.5708
 
-[node name="barricada5" parent="." instance=ExtResource("12_m4mg8")]
+[node name="barricada5" parent="." instance=ExtResource("6_xx5i8")]
 position = Vector2(720, 271)
 rotation = 1.5708
 
-[node name="barricada6" parent="." instance=ExtResource("12_m4mg8")]
+[node name="barricada6" parent="." instance=ExtResource("6_xx5i8")]
 position = Vector2(719, 532)
 rotation = 1.5708
 
-[node name="barricada7" parent="." instance=ExtResource("12_m4mg8")]
+[node name="barricada7" parent="." instance=ExtResource("6_xx5i8")]
 position = Vector2(400, 624)
 rotation = -3.13732
 
-[node name="ZombiSpaw4" parent="." instance=ExtResource("3_fjdr7")]
-position = Vector2(215, -294)
-zombiNormal = SubResource("PackedScene_fshwt")
-speedZombi = ExtResource("12_sbqi8")
-tankZombi = ExtResource("13_0uelo")
-explodeZombi = ExtResource("14_qosl3")
-_first_follow = NodePath("../barricada1")
+[node name="HUDVidaPontos" parent="." instance=ExtResource("13_86gy0")]
 
-[node name="HUDVidaPontos" parent="." instance=ExtResource("3_5ol6p")]
-
-[node name="Player" parent="." instance=ExtResource("1_ks1kn")]
+[node name="Player" parent="." instance=ExtResource("14_ujk1a")]
 z_index = 100
+position = Vector2(-25, 168)
 collision_layer = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.95, 1.95)
-script = ExtResource("2_tw5cj")
+zoom = Vector2(4, 4)
+script = ExtResource("15_f46xg")
 player = NodePath("../Player")
 
-[node name="shotgun" parent="." instance=ExtResource("16_vgp10")]
-position = Vector2(446, -71)
+[node name="moldura" type="Sprite2D" parent="."]
+position = Vector2(440.875, -71)
+scale = Vector2(0.437499, 0.308594)
+texture = ExtResource("17_505u5")
+
+[node name="shotgun" parent="." instance=ExtResource("16_lr7l4")]
+position = Vector2(441, -71)
 scale = Vector2(0.45758, 0.296875)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

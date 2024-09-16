@@ -14,7 +14,7 @@ func _ready():
 		self.position = target.position
 		set_process(true)
 
-func _process(delta):
+func _process(_delta) -> void:
 	if get_node(player) == null:
 		return
 	var target = get_node(player)

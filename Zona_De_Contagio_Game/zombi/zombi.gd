@@ -26,7 +26,7 @@ func _ready() -> void:
 	$Mao.set_collision_layer_value(1, true)
 	$Mao.set_collision_mask_value(1, true)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if _follow:
 		var nextPostion: Vector2
 		if(_calculatePath):

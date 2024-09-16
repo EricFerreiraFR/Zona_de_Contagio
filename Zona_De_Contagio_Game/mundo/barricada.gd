@@ -15,7 +15,7 @@ func _ready():
 	$Control/ProgressBar.value = health
 	$Control/Label.text = ""
 
-func _process(delta: float):
+func _process(_delta: float):
 	# Verifica se o player está perto e se o botão direito do mouse foi pressionado
 	if is_player_near and Input.is_action_pressed("RightMouseClick") and not is_healing:
 		is_healing = true 

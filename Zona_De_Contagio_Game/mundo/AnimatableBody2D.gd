@@ -38,6 +38,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.name == "Player":  # Verifica se o objeto que saiu é o jogador
 		playerNearby = false
 
-func _process(delta):
+func _process(_delta):
 	if playerNearby and player._score >= 400  and Input.is_action_just_pressed("toggleDoor"):
 		toggleDoor()

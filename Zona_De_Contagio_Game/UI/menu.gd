@@ -6,7 +6,7 @@ extends Control
 func _ready():
 	$Main/VBoxContainer/Jogar.grab_focus()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if ($music.playing == false):
 		$music.playing = true
 

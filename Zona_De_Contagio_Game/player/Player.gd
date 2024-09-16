@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED: float = 200
-@onready var _size: Vector2 = $Sprite2D.get_rect().size
+#@onready var _size: Vector2 = $Sprite2D.get_rect().size
 @export var _keys: Dictionary = {
 	"left":  "ui_left",
 	"right": "ui_right",
@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("MouseClick"):
 		_shoot()
 
-func _physics_process(delta):
+func _physics_process(_delta) -> void:
 	pass
 
 func _move_in_any_direction(_delta: float) -> void:
@@ -72,7 +72,7 @@ func _shoot() -> void:
 			bullet.rotation += random_angle
 			
 			# Define a direção do projétil com base no ângulo
-			var direction = (_direction.rotated(random_angle)).normalized()
+			#var direction = (_direction.rotated(random_angle)).normalized()
 	else:
 		# Comportamento padrão para arma normal
 		var bullet = projetil.instantiate()
