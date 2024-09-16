@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy3hmfqs3si8s"]
+[gd_scene load_steps=10 format=3 uid="uid://cy3hmfqs3si8s"]
 
 [ext_resource type="Texture2D" uid="uid://do2k6mkblk7o6" path="res://assets/words/ZonaDeContagio.png" id="1_rl46u"]
 [ext_resource type="Script" path="res://UI/menu.gd" id="1_vk18w"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chyqkml8fpyn6" path="res://UI/teclas.png" id="5_sgtam"]
 [ext_resource type="Texture2D" uid="uid://nby3ut1s7ws8" path="res://UI/mouse.png" id="6_wnd3f"]
 [ext_resource type="AudioStream" uid="uid://ct0fxk1tba1vx" path="res://assets/sounds/suspense music.mp3" id="7_rxhq0"]
+[ext_resource type="Texture2D" uid="uid://c24dqb7oy6ohb" path="res://assets/words/gameover.png" id="9_ha884"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -142,9 +143,73 @@ text = "Voltar"
 stream = ExtResource("7_rxhq0")
 volume_db = -14.987
 
+[node name="GameOver" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="GameOver"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 142.0
+offset_right = 199.0
+offset_bottom = 184.0
+scale = Vector2(13.8324, 7.82505)
+color = Color(0, 0, 0, 0.584314)
+
+[node name="gameover" type="Sprite2D" parent="GameOver"]
+position = Vector2(594, 313)
+scale = Vector2(2.86491, 5.59756)
+texture = ExtResource("9_ha884")
+
+[node name="Voltar" type="Button" parent="GameOver"]
+layout_mode = 0
+offset_top = 568.0
+offset_right = 55.0
+offset_bottom = 599.0
+scale = Vector2(2.2657, 2.2657)
+text = "Voltar"
+
+[node name="Obrigado" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Voltar" type="Button" parent="Obrigado"]
+layout_mode = 0
+offset_top = 568.0
+offset_right = 55.0
+offset_bottom = 599.0
+scale = Vector2(2.2657, 2.2657)
+text = "Voltar"
+
+[node name="ColorRect" type="ColorRect" parent="Obrigado"]
+layout_mode = 0
+offset_left = 133.0
+offset_top = 142.0
+offset_right = 199.0
+offset_bottom = 184.0
+scale = Vector2(13.8324, 7.82505)
+color = Color(0, 0, 0, 0.584314)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Obrigado"]
+modulate = Color(1, 0.0980392, 0, 1)
+layout_mode = 0
+offset_left = 192.0
+offset_top = 266.0
+offset_right = 343.0
+offset_bottom = 291.0
+scale = Vector2(5, 5)
+bbcode_enabled = true
+text = "Obrigado por Jogar"
+
 [connection signal="pressed" from="Main/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Instrucoes" to="." method="_on_instrucoes_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="Instrucoes/Voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="Creditos/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="GameOver/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="Obrigado/Voltar" to="." method="_on_voltar_pressed"]

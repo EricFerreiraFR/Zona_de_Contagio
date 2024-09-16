@@ -10,7 +10,7 @@ var _health = _maxhealth
 var _follow: Node
 var _ultimaBarricada: Node
 var _lifeSpaw = preload("res://collectibles/lifeItem.tscn")
-var _calculatePath: bool = true ;
+var _calculatePath: bool = true
 var countCalculatePath: int = 0
 
 func _init() -> void:
@@ -40,10 +40,8 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		
 		#olha para o player
-		#look_at((global_position + nextPostion)/2.0)
 		var lookDirection = (nextPostion - global_position).normalized()
 		rotation = lookDirection.angle()
-		#var rotation = global_position.slerp(nextPostion, 0.95)
 
 func _makePath() -> void:
 	if(_follow):

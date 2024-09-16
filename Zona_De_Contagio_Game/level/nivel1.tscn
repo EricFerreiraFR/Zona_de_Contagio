@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dk6seyucdx0jl" path="res://assets/zombies/zombie1.png" id="12_byura"]
 [ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="12_m4mg8"]
 [ext_resource type="PackedScene" uid="uid://bjgby10v1pwd2" path="res://zombi/zombi2.tscn" id="12_sbqi8"]
-[ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="12_sl8rn"]
-[ext_resource type="PackedScene" uid="uid://cryfbvv17bo48" path="res://zombi/zombiTank.tscn" id="13_0uelo"]
+[ext_resource type="PackedScene" path="res://cenario.tscn" id="12_sl8rn"]
+[ext_resource type="PackedScene" uid="uid://c0jla6svduvnf" path="res://zombi/zombiTank.tscn" id="13_0uelo"]
 [ext_resource type="PackedScene" uid="uid://b60q4vpudo3v7" path="res://zombi/zombiExplode.tscn" id="14_qosl3"]
 [ext_resource type="PackedScene" uid="uid://danx045r1wpko" path="res://collectibles/shotgun.tscn" id="16_vgp10"]
 
