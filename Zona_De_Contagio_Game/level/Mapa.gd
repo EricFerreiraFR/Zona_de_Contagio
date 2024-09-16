@@ -12,8 +12,8 @@ func _ready() -> void:
 	updateRound(roundN)
 	player = get_node("/root/Node2D/Player")
 	$Timer.start()
-	
-	
+
+
 func _on_timer_timeout():
 	#tempo do roundN
 	if waitRound == false:
@@ -53,9 +53,15 @@ func _process(_delta):
 
 func GameOver():
 	$HUDVidaPontos.GameOver()
-	
-func updateLevel(Level: int):
-	$HUDVidaPontos.updateLevel(Level)
+	Global._is_gameOver = true
+	get_tree().change_scene_to_file("res://UI/menu.tscn")
+
+func finish():
+	Global._is_Over = true
+	get_tree().change_scene_to_file("res://UI/menu.tscn")
+
+func updateLevel(level: int):
+	$HUDVidaPontos.updateLevel(level)
 	
 func updateRound(Round: int):
 	$HUDVidaPontos.updateRound(Round)

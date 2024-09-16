@@ -2,9 +2,12 @@ extends Control
 
 @onready var curr_scene = $Main
 
-
 func _ready():
 	$Main/VBoxContainer/Jogar.grab_focus()
+	if( Global._is_gameOver ):
+		_gameOver()
+	if( Global._is_Over ):
+		_finish()
 
 func _process(_delta: float) -> void:
 	if ($music.playing == false):
@@ -15,12 +18,18 @@ func change_screen(scene):
 	curr_scene = scene
 	curr_scene.visible = true
 
-func _on_jogar_pressed():
-	_clickAudio()
-	get_tree().change_scene_to_file("res://level/mundoFinal.tscn")
+func _finish():
+	change_screen($Obrigado)
+
+func _gameOver():
+	change_screen($GameOver)
 
 func _clickAudio():
 	$Main/VBoxContainer/Click.play()
+
+func _on_jogar_pressed():
+	_clickAudio()
+	get_tree().change_scene_to_file("res://level/nivel1.tscn")
 
 func _on_instrucoes_pressed():
 	_clickAudio()
@@ -37,6 +46,8 @@ func _on_sair_pressed():
 	get_tree().quit()
 
 func _on_voltar_pressed():
+	Global.is_over = false
+	Global._is_gameOver = false
 	_clickAudio()
 	change_screen($Main)
 	$Main/VBoxContainer/Jogar.grab_focus()

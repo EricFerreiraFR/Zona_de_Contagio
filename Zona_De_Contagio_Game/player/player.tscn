@@ -29,8 +29,13 @@ shape = SubResource("CircleShape2D_hht7g")
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(10, 5)
 
-[node name="shoot" type="AudioStreamPlayer2D" parent="."]
+[node name="shotgun" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_g8sdl")
 volume_db = -12.866
 pitch_scale = 0.42
 attenuation = 9.18958
+
+[node name="pistol" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_g8sdl")
+volume_db = -16.156
+mix_target = 1

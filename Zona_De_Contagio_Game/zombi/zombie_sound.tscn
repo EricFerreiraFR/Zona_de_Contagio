@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://ditaximqpjak6"]
+
+[ext_resource type="Script" path="res://zombi/zombie_sound.gd" id="1_tgtff"]
+[ext_resource type="AudioStream" uid="uid://cr4pw0ng7qunq" path="res://assets/sounds/zombie1.mp3" id="1_wpeag"]
+[ext_resource type="AudioStream" uid="uid://cfsxbebbbu0dr" path="res://assets/sounds/zombie2.mp3" id="2_11fg3"]
+[ext_resource type="AudioStream" uid="uid://br0klyi7rocvp" path="res://assets/sounds/zombie3.mp3" id="3_auw5w"]
+[ext_resource type="AudioStream" uid="uid://bsqrdxwm53rxt" path="res://assets/sounds/zombie4.mp3" id="4_mprr0"]
+
+[node name="zombieSound" type="Node2D"]
+script = ExtResource("1_tgtff")
+
+[node name="audio1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_wpeag")
+
+[node name="audio2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_11fg3")
+
+[node name="audio3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_auw5w")
+
+[node name="audio4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mprr0")
