@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bc4qxjay5fd1e"
+path="res://.godot/imported/04 - Broken Mall ( level, mood ).ogg-c9e5b1bfacd2d9efdb8d0085e9fbf3e5.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/04 - Broken Mall ( level, mood ).ogg"
+dest_files=["res://.godot/imported/04 - Broken Mall ( level, mood ).ogg-c9e5b1bfacd2d9efdb8d0085e9fbf3e5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

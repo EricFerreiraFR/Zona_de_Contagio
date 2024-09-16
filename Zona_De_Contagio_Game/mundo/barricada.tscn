@@ -72,6 +72,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itx4r"]
 size = Vector2(20, 18.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ax64t"]
+radius = 43.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ltmrm"]
 bg_color = Color(0.0392157, 0.0392157, 0.0392157, 0.745098)
 
@@ -81,9 +84,6 @@ bg_color = Color(1, 0, 0, 0.745098)
 [sub_resource type="Theme" id="Theme_v0pie"]
 ProgressBar/styles/background = SubResource("StyleBoxFlat_ltmrm")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_4078o")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ax64t"]
-radius = 43.0
 
 [node name="barricada" type="StaticBody2D"]
 collision_layer = 96
@@ -114,6 +114,15 @@ collision_mask = 4
 position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_itx4r")
 
+[node name="PlayerNear" type="Area2D" parent="."]
+position = Vector2(0, -9)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerNear"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_ax64t")
+
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -131,9 +140,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -37.0
-offset_top = -6.0
+offset_top = -7.0
 offset_right = 183.0
-offset_bottom = 17.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.35, 0.35)
@@ -160,15 +169,6 @@ grow_vertical = 2
 scale = Vector2(0.1, 0.1)
 theme = SubResource("Theme_v0pie")
 fill_mode = 1
-
-[node name="PlayerNear" type="Area2D" parent="."]
-position = Vector2(0, -9)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerNear"]
-position = Vector2(0, 9)
-shape = SubResource("CircleShape2D_ax64t")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="PlayerNear" to="." method="_on_player_near_body_entered"]
