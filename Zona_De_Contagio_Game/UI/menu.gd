@@ -17,7 +17,7 @@ func change_screen(scene):
 
 func _on_jogar_pressed():
 	_clickAudio()
-	get_tree().change_scene_to_file("res://level/nivel1.tscn")
+	get_tree().change_scene_to_file("res://level/mundoFinal.tscn")
 
 func _clickAudio():
 	$Main/VBoxContainer/Click.play()
