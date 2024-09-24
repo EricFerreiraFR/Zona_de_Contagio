@@ -1,12 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://8rue3j5tbcng"]
+[gd_scene load_steps=5 format=3 uid="uid://8rue3j5tbcng"]
 
 [ext_resource type="Script" path="res://redeNeural/personagem.gd" id="1_c46m5"]
 [ext_resource type="Texture2D" uid="uid://dk6seyucdx0jl" path="res://assets/zombies/zombie1.png" id="1_wm0xo"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_cmlbx"]
+radius = 10.198
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_sxaln"]
 
 [node name="Personagem" type="CharacterBody2D"]
+collision_layer = 0
 script = ExtResource("1_c46m5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cmlbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wm0xo")

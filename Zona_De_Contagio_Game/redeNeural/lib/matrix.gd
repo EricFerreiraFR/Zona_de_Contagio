@@ -148,6 +148,6 @@ static func map(matrix: Matrix, callback) -> Matrix:
 	
 	for row in range(result.rows):
 		for col in range(result.cols):
-			result.data[row][col] = callback.call_func(matrix.data[row][col], row, col)
+			result.data[row][col] = callback.call(matrix.data[row][col], row, col)
 
 	return result
