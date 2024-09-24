@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://8rue3j5tbcng"]
+
+[ext_resource type="Script" path="res://redeNeural/personagem.gd" id="1_c46m5"]
+[ext_resource type="Texture2D" uid="uid://dk6seyucdx0jl" path="res://assets/zombies/zombie1.png" id="1_wm0xo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sxaln"]
+
+[node name="Personagem" type="CharacterBody2D"]
+script = ExtResource("1_c46m5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wm0xo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_sxaln")
+
+[node name="RayCast2D1" type="RayCast2D" parent="."]
+target_position = Vector2(356, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="."]
+target_position = Vector2(348, 25)
+
+[node name="RayCast2D3" type="RayCast2D" parent="."]
+target_position = Vector2(344, -27)
+
+[node name="RayCast2D4" type="RayCast2D" parent="."]
+target_position = Vector2(328, -44)
+
+[node name="RayCast2D5" type="RayCast2D" parent="."]
+target_position = Vector2(339, 50)

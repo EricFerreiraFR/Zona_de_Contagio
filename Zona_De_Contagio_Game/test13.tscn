@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvdnmfqseue7p"]
+[gd_scene load_steps=10 format=3 uid="uid://ejxj0qvdgnb2"]
 
 [ext_resource type="PackedScene" uid="uid://cqrtje8rbr1ub" path="res://cenario.tscn" id="1_ahy8j"]
 [ext_resource type="PackedScene" uid="uid://b4lope2jmcye5" path="res://player/player.tscn" id="2_3pkbe"]
-[ext_resource type="PackedScene" uid="uid://g0yfwqo3g4e6" path="res://mundo/canvas_layer.tscn" id="3_8eq4j"]
+[ext_resource type="PackedScene" uid="uid://g0yfwqo3g4e6" path="res://mundo/HUDVidaPontos.tscn" id="3_8eq4j"]
 [ext_resource type="Script" path="res://player/Camera.gd" id="4_5gpao"]
 [ext_resource type="PackedScene" uid="uid://b6j53sf8wopdg" path="res://mundo/door.tscn" id="5_lrsh2"]
 [ext_resource type="PackedScene" uid="uid://b0mnfdm3tjokl" path="res://mundo/barricada.tscn" id="6_ji43b"]
 [ext_resource type="PackedScene" uid="uid://cw0ad56dvr8gf" path="res://zombi/zombi_spaw.tscn" id="7_h1uc3"]
 [ext_resource type="PackedScene" uid="uid://bcipuh0dy3pc8" path="res://zombi/zombi.tscn" id="8_4hxic"]
+[ext_resource type="PackedScene" uid="uid://cy3hmfqs3si8s" path="res://UI/menu.tscn" id="9_hcuja"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -89,3 +90,5 @@ _first_follow = NodePath("../barricada8")
 [node name="Zombi" parent="." instance=ExtResource("8_4hxic")]
 position = Vector2(-252, 123)
 _followPath = NodePath("../barricada")
+
+[node name="Menu" parent="." instance=ExtResource("9_hcuja")]
