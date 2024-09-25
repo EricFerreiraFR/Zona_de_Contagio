@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var _personagem: PackedScene
-var qtdPorGeracao = 100
+var qtdPorGeracao = 10
 var numero_melhores_pais = 10 # Quantidade de melhores pais que serão passados diretamente para a próxima geração
 var numero_filhos_por_pais = 90 # Quantidade de filhos gerados pelos melhores pais (90 + 10 melhores = 100)
 
@@ -43,9 +43,9 @@ func evolve_generation():
 		var pai2 = melhores_pais[randi() % numero_melhores_pais].get_neural_network()
 		
 		# Reproduz os pais para criar um novo filho
-		var novo_filho_nn = CharacterBody2D.reproduce(pai1, pai2)
+		var novo_filho_nn = NeuralNetwork.reproduce(pai1, pai2)
 		# Aplica mutações no filho
-		novo_filho_nn = CharacterBody2D.mutate(novo_filho_nn, self._mutation_callback)
+		#novo_filho_nn = NeuralNetwork.mutate(novo_filho_nn, self._mutation_callback)
 
 		# Instancia um novo personagem com a rede neural gerada
 		var novo_filho = _personagem.instantiate() as CharacterBody2D
@@ -85,17 +85,13 @@ func _mutation_callback(nn: NeuralNetwork):
 
 # Chamada a cada intervalo de tempo para evoluir a geração
 func _on_timer_timeout():
-	evolve_generation()
+	#evolve_generation()
+	return
 
 
 
 
-
-
-
-
-
-
+#==========================================================================
 func updateLevel(level: int):
 	pass
 	

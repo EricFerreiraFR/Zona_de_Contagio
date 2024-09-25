@@ -5,8 +5,6 @@ var move_forward = false
 var rotate_right = false
 var rotate_left = false
 
-var _markToLive = false
-
 # Velocidade e rotação
 var move_speed = 100.0
 var rotation_speed = 2.0
@@ -23,7 +21,7 @@ var rotation_speed = 2.0
 var nn: NeuralNetwork
 
 func _init():
-	nn = NeuralNetwork.new(5, 5, 3)
+	nn = NeuralNetwork.new(5, 8, 3)
 
 func _process(delta):
 	_calculate()
@@ -44,18 +42,19 @@ func _process(delta):
 	move_forward = false
 	rotate_right = false
 	rotate_left = false
+	await get_tree().create_timer(0.1).timeout
 	return
 
 
 # Função para verificar as distâncias dos RayCasts
 func _check_distances():
-	var distancias: Array[float] = []
+	var distancias = []
 	for ray in raycasts:
 		if ray.is_colliding():
 			var distance = ray.get_collision_point().distance_to(global_position)
 			distancias.append(distance)
 		else:
-			distancias.append(0.0)
+			distancias.append(0)
 	return distancias
 
 func _calculate():
@@ -64,3 +63,9 @@ func _calculate():
 	move_forward = result[0] > 0.5
 	rotate_right = result[1] > 0.5
 	rotate_left =  result[2] > 0.5
+
+func set_neural_network(newNn: NeuralNetwork):
+	self.nn = newNn
+
+func get_neural_network():
+	return nn
